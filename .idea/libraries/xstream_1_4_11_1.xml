@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="xstream-1.4.11.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/xstream/xstream-1.4.11.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xstream/xstream-benchmark-1.4.11.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xstream/xstream-hibernate-1.4.11.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xstream/xstream-jmh-1.4.11.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/xstream/xstream-jmh-1.4.11.1.jar!/" />
+    </SOURCES>
+  </library>
+</component>
