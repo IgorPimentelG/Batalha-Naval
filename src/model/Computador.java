@@ -154,6 +154,12 @@ public class Computador {
         return formacao;
     }
 
+    public void setPontuacao(int pontuacao) {
+        if(pontuacao > 0) {
+            this.pontuacao += pontuacao;
+        }
+    }
+
     public int getPontuacao() {
         return pontuacao;
     }

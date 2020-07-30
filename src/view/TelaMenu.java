@@ -51,7 +51,7 @@ public class TelaMenu extends ScreenSetup {
         JButton btnPlayerVsComputador = new ModButton("PLAYER VS COMPUTADOR", 130, 175, 300, 45);
         btnPlayerVsComputador.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new TelaPartida(new Partida(player));
+                new TelaPartida(player);
                 dispose();
             }
         });

@@ -15,6 +15,8 @@ public class ScreenSetup extends JFrame {
         setContentPane(new JLayeredPane());
         setResizable(false);
         setLocationRelativeTo(null);
+
+
         setIconImage(Imagens.LOGO_SUPERIOR.getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

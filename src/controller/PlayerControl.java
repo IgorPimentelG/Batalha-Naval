@@ -1,13 +1,11 @@
 package controller;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+// -- APIS --
+import java.util.*;
+import java.util.regex.*;
 
-import exceptions.DadosInvalidosException;
-import exceptions.EmailInvalidoException;
+// -- Pacotes --
+import exceptions.*;
 import model.Player;
 import persistencia.Persistencia;
 

@@ -11,20 +11,22 @@ import recursos.*;
 
 public class TelaPartida extends ScreenSetup {
 
+    private Player player;
     private Partida partida;
+
     private  JLabel lblTitulo;
 
-    public TelaPartida(Partida partida) {
+    public TelaPartida(Player player) {
         super("World of Warships - Batalhe!", 585, 505, Imagens.BACKGROUND_GAME);
         setUndecorated(true);
 
-        this.partida = partida;
+        this.player = player;
 
         // Adicionar Componentes a View
         adicionarCard();
-        adicionarLabel();
         adicionarButton();
         adicionarMapa();
+        adicionarLabel();
 
         setVisible(true);
     }
@@ -51,14 +53,6 @@ public class TelaPartida extends ScreenSetup {
 
         lblTitulo = new JLabel(partida.getDesafiante().getNickname() + " [" + partida.getDesafiante().getPontuacao()
                 + "] x [" + partida.getComputador().getPontuacao() + "]" + "Computador");
-        /*
-        if(partida.getDesafiado() == null) {
-
-        } else {
-            lblTitulo = new JLabel(partida.getDesafiante().getNickname() + " [" + partida.getDesafiante().getPontuacao()
-                    + "] x [" + partida.getDesafiante().getPontuacao() + "] " + partida.getDesafiado().getNickname());
-        }
-         */
 
         lblTitulo.setBounds(100, 50, 380, 20);
         lblTitulo.setHorizontalAlignment(JLabel.CENTER);
@@ -79,7 +73,9 @@ public class TelaPartida extends ScreenSetup {
     }
 
     private void adicionarMapa() {
-        Mapa mapa = new Mapa(partida, this);
+        Mapa mapa = new Mapa();
+        partida = new Partida(player, this, mapa);
+        mapa.setPartida(partida);
         add(mapa.gerarMapa(), 0);
     }
 }

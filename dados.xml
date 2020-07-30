@@ -52,5 +52,12 @@
         </list>
       </formacao>
     </model.Player>
+    <model.Player>
+      <nickname>seuZé</nickname>
+      <email>igor.pimentel@hotmail.com</email>
+      <password>12345678</password>
+      <pontuacao>0</pontuacao>
+      <formacao/>
+    </model.Player>
   </usuariosCadastrados>
 </controller.PlayerControl>
