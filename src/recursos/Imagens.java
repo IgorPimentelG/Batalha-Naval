@@ -5,7 +5,8 @@ import javax.swing.ImageIcon;
 
 public interface Imagens {
     // Logo
-    public static final ImageIcon LOGO_SUPERIOR = new ImageIcon("images/logo.png");
+    public static final ImageIcon LOGO_SUPERIOR = new ImageIcon("images/logo_superior.png");
+    public static final ImageIcon LOGO = new ImageIcon("images/logo.png");
 
     // Backgrounds
     public static final ImageIcon BACKGROUN_SIGN_IN 				= new ImageIcon("images/background_sign-in.png");
@@ -16,6 +17,9 @@ public interface Imagens {
     public static final ImageIcon BACKGROUND_CONVITE 				= new ImageIcon("images/background_convite.png");
     public static final ImageIcon BACKGROUND_HISTORICO 				= new ImageIcon("images/background_historico.png");
     public static final ImageIcon BACKGROUND_EMBARCACOES 			= new ImageIcon("images/background_embarcacoes.png");
+    public static final ImageIcon BACKGROUND_SPASH                  = new ImageIcon("images/background_spash.jpg");
+    public static final ImageIcon BACKGROUND_RESULTADO              = new ImageIcon("images/background_resultado.jpg");
+    public static final ImageIcon ICON_ESPADA                       = new ImageIcon("images/espada.png");
 
     // Mapa
     public static final ImageIcon BARCO_2_PARTES 	= new ImageIcon("images/barco_1P.png");
