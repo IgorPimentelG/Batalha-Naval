@@ -27,4 +27,12 @@ public interface Imagens {
     public static final ImageIcon ICON_PIRATA 		= new ImageIcon("images/ancora.png");
     public static final ImageIcon AGUA 				= new ImageIcon("images/agua.png");
     public static final ImageIcon FOGO				= new ImageIcon("images/fogo.jpg");
+
+    // Tela Carregamento
+    public static final ImageIcon BACKGROUND_CARREGAMENTO   = new ImageIcon("images/carregamento/background_carregamento.jpg");
+    public static final ImageIcon MODO_1                    = new ImageIcon("images/carregamento/modo_1.png");
+    public static final ImageIcon MODO_2                    = new ImageIcon("images/carregamento/modo_2.png");
+    public static final ImageIcon MODO_3                    = new ImageIcon("images/carregamento/modo_3.png");
+    public static final ImageIcon MODO_4                    = new ImageIcon("images/carregamento/modo_4.png");
+    public static final ImageIcon MODO_5                    = new ImageIcon("images/carregamento/modo_5.png");
 }

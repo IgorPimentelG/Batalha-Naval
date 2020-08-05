@@ -48,9 +48,7 @@ public class Player implements Comparable<Player> {
     }
 
     public void setPontuacao(int pontuacao) {
-        if(pontuacao > 0) {
-            this.pontuacao += pontuacao;
-        }
+        this.pontuacao = pontuacao;
     }
 
     public List<List<String>> getFormacao() {

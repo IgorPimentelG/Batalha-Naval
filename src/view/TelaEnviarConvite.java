@@ -11,6 +11,7 @@ import javax.swing.table.*;
 
 // -- Pacotes --
 import controller.PlayerControl;
+import model.Partida;
 import model.Player;
 import persistencia.Persistencia;
 import recursos.*;
@@ -22,7 +23,7 @@ public class TelaEnviarConvite extends ScreenSetup {
     private Player player;
 
     public TelaEnviarConvite(Player player) {
-        super("World of Warships - Convites", 850, 520, Imagens.BACKGROUND_CONVITE);
+        super("World of Warships - Desafiar", 850, 520, Imagens.BACKGROUND_CONVITE);
         this.player = player;
 
         // -- Adicionar Componentes a View --
@@ -86,8 +87,18 @@ public class TelaEnviarConvite extends ScreenSetup {
     }
 
     private void adicionarButtons() {
-        JButton btnPesquisar = new ModButton("PESQUISAR", 70, 345, 280);
+        JButton btnPesquisar = new ModButton("DESAFIAR", 70, 345, 280);
         btnPesquisar.setBackground(Cores.COLOR_VERDE);
+        btnPesquisar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                // -- Recuperar player selecionado --
+                PlayerControl control = new Persistencia().recuperarController();
+                Player desafiado = control.pesquisarNickName(inputBuscarJogador.getText());
+                dispose();
+                JOptionPane.showMessageDialog(null, "A PARTIDA IRÁ COMEÇAR EM BREVE...", "ϟ - BATALHE! - ϟ", JOptionPane.WARNING_MESSAGE);
+                new TelaPartida(player, desafiado);
+            }
+        });
         add(btnPesquisar, 0);
 
         JButton btnVoltar = new ModButton("⇖ VOLTAR", 70, 390, 280);
@@ -96,7 +107,7 @@ public class TelaEnviarConvite extends ScreenSetup {
         btnVoltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                //new TelaMenu();
+                new TelaMenu(player);
             }
         });
         add(btnVoltar, 0);

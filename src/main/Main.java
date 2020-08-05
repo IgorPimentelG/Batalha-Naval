@@ -8,9 +8,6 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args)  {
 
-        new TelaTeste();
-
-        /*
         TelaSpash telaSpash = new TelaSpash();
 
         try {
@@ -22,6 +19,5 @@ public class Main {
                     "<html><center>HOUVE UM ERRO AO INICIALIZAR O JOGO! <br>REINICIE NOVAMENTE O JOGO<center></html>",
                     "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
         }
-         */
     }
 }

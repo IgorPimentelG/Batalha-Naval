@@ -1,17 +1,22 @@
 <controller.PlayerControl>
   <usuariosCadastrados>
     <model.Player>
-      <nickname>igor-pimentel</nickname>
+      <nickname>igor</nickname>
       <email>igor.pimentel.msi@hotmail.com</email>
       <password>12345678</password>
-      <pontuacao>0</pontuacao>
+      <pontuacao>5</pontuacao>
       <formacao>
         <list>
-          <string>C1</string>
           <string>C2</string>
+          <string>C1</string>
         </list>
         <list>
-          <string>E5</string>
+          <string>C5</string>
+          <string>C4</string>
+        </list>
+        <list>
+          <string>E3</string>
+          <string>E2</string>
           <string>E4</string>
         </list>
         <list>
@@ -19,45 +24,85 @@
           <string>A3</string>
           <string>A4</string>
         </list>
+      </formacao>
+    </model.Player>
+    <model.Player>
+      <nickname>player2</nickname>
+      <email>player2@hotmail.com</email>
+      <password>12345678</password>
+      <pontuacao>2</pontuacao>
+      <formacao>
+        <list>
+          <string>C5</string>
+          <string>D5</string>
+        </list>
+        <list>
+          <string>A1</string>
+          <string>A2</string>
+        </list>
         <list>
           <string>E1</string>
           <string>E2</string>
           <string>E3</string>
         </list>
+        <list>
+          <string>C1</string>
+          <string>C2</string>
+          <string>C3</string>
+        </list>
       </formacao>
     </model.Player>
     <model.Player>
-      <nickname>igor.pimentel</nickname>
-      <email>igor.pimentelmsi@hotmail.com</email>
+      <nickname>player3</nickname>
+      <email>player3@hotmail.com</email>
       <password>12345678</password>
       <pontuacao>0</pontuacao>
       <formacao>
         <list>
-          <string>B2</string>
-          <string>B3</string>
+          <string>C1</string>
+          <string>B1</string>
         </list>
         <list>
-          <string>E4</string>
-          <string>E3</string>
+          <string>A5</string>
+          <string>B5</string>
+          <string>C5</string>
         </list>
         <list>
-          <string>D1</string>
+          <string>A3</string>
+          <string>A2</string>
+        </list>
+        <list>
           <string>D2</string>
           <string>D3</string>
-        </list>
-        <list>
-          <string>B5</string>
-          <string>A5</string>
-          <string>C5</string>
+          <string>D4</string>
         </list>
       </formacao>
     </model.Player>
     <model.Player>
-      <nickname>seuZé</nickname>
-      <email>igor.pimentel@hotmail.com</email>
+      <nickname>player4</nickname>
+      <email>player4@hotmail.com</email>
       <password>12345678</password>
       <pontuacao>0</pontuacao>
-      <formacao/>
+      <formacao>
+        <list>
+          <string>A1</string>
+          <string>B1</string>
+        </list>
+        <list>
+          <string>A5</string>
+          <string>B5</string>
+        </list>
+        <list>
+          <string>D2</string>
+          <string>D3</string>
+          <string>D4</string>
+        </list>
+        <list>
+          <string>E2</string>
+          <string>E3</string>
+          <string>E4</string>
+        </list>
+      </formacao>
     </model.Player>
   </usuariosCadastrados>
 </controller.PlayerControl>

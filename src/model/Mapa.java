@@ -84,7 +84,7 @@ public class Mapa {
                 if (editarFormacao != null) {
                     celula.addActionListener(new VerificarFormacaoListener());
                 } else {
-                    celula.addActionListener(new startPlayerVsComputador());
+                    celula.addActionListener(new startPartida());
                 }
 
                 linha.add(celula);
@@ -234,9 +234,9 @@ public class Mapa {
         }
     }
 
-    private class startPlayerVsComputador implements ActionListener {
+    private class startPartida implements ActionListener {
         public void actionPerformed(ActionEvent evento) {
-            partida.PlayerVsComputador((JButton) evento.getSource());
+            partida.checkMove((JButton) evento.getSource());
         }
     }
 }

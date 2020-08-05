@@ -30,8 +30,16 @@ public class PlayerControl {
 
     public Player pesquisarPlayer(Player player) {
         for(Player playerCadastrado : usuariosCadastrados)  {
-            if(playerCadastrado.getEmail().contentEquals(player.getEmail())
-                    || playerCadastrado.getNickname().equals(player.getNickname())) {
+            if(playerCadastrado.getEmail().contentEquals(player.getEmail()) && playerCadastrado.getNickname().equals(player.getNickname())) {
+                return playerCadastrado;
+            }
+        }
+        return null;
+    }
+
+    public Player pesquisarNickName(String nickname) {
+        for(Player playerCadastrado : usuariosCadastrados) {
+            if(playerCadastrado.getNickname().equals(nickname)) {
                 return playerCadastrado;
             }
         }
@@ -74,6 +82,18 @@ public class PlayerControl {
     public void salvarFormacao(Player player, List<List<String>> formacao) {
         Player playerCadastrado = pesquisarPlayer(player);
         playerCadastrado.setFormacao(formacao);
+        salvar();
+    }
+
+    public void salvarPontuacaoGanha(Player player, int pontuacao) {
+        Player playerCadastrado = pesquisarPlayer(player);
+        playerCadastrado.setPontuacao(player.getPontuacao() + pontuacao);
+        salvar();
+    }
+
+    public void salvarPontuacaoPerda(Player player, int pontuacao) {
+        Player playerCadastrado = pesquisarPlayer(player);
+        playerCadastrado.setPontuacao(player.getPontuacao() - pontuacao);
         salvar();
     }
 

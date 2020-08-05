@@ -11,7 +11,6 @@ public class Computador {
     // -- Atributos --
     private List<List<String>> formacao= new ArrayList<List<String>>();
     private List<List<String>> matriz = new ArrayList<List<String>>();
-    private int pontuacao;
 
     // -- Construtor --
     public Computador() {
@@ -152,15 +151,5 @@ public class Computador {
 
     public List<List<String>> getFormacao() {
         return formacao;
-    }
-
-    public void setPontuacao(int pontuacao) {
-        if(pontuacao > 0) {
-            this.pontuacao += pontuacao;
-        }
-    }
-
-    public int getPontuacao() {
-        return pontuacao;
     }
 }
