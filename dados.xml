@@ -1,44 +1,18 @@
 <controller.PlayerControl>
   <usuariosCadastrados>
     <model.Player>
-      <nickname>igor</nickname>
-      <email>igor.pimentel.msi@hotmail.com</email>
+      <nickname>player1</nickname>
+      <email>player1@hotmail.com</email>
       <password>12345678</password>
-      <pontuacao>5</pontuacao>
+      <pontuacao>10</pontuacao>
       <formacao>
-        <list>
-          <string>C2</string>
-          <string>C1</string>
-        </list>
-        <list>
-          <string>C5</string>
-          <string>C4</string>
-        </list>
-        <list>
-          <string>E3</string>
-          <string>E2</string>
-          <string>E4</string>
-        </list>
-        <list>
-          <string>A2</string>
-          <string>A3</string>
-          <string>A4</string>
-        </list>
-      </formacao>
-    </model.Player>
-    <model.Player>
-      <nickname>player2</nickname>
-      <email>player2@hotmail.com</email>
-      <password>12345678</password>
-      <pontuacao>2</pontuacao>
-      <formacao>
-        <list>
-          <string>C5</string>
-          <string>D5</string>
-        </list>
         <list>
           <string>A1</string>
           <string>A2</string>
+        </list>
+        <list>
+          <string>C5</string>
+          <string>D5</string>
         </list>
         <list>
           <string>E1</string>
@@ -51,58 +25,104 @@
           <string>C3</string>
         </list>
       </formacao>
+      <historicos>
+        <model.Historico>
+          <vencedor>player1</vencedor>
+          <desafiado>player2</desafiado>
+          <pontuacao>10</pontuacao>
+          <dataDaPartida>2020-08-06T19:00:01.84</dataDaPartida>
+          <formacaoDesafiante>
+            <list>
+              <string>A1</string>
+              <string>A2</string>
+            </list>
+            <list>
+              <string>C5</string>
+              <string>D5</string>
+            </list>
+            <list>
+              <string>E1</string>
+              <string>E2</string>
+              <string>E3</string>
+            </list>
+            <list>
+              <string>C1</string>
+              <string>C2</string>
+              <string>C3</string>
+            </list>
+          </formacaoDesafiante>
+          <formacaoDesafiado>
+            <list>
+              <string>C2</string>
+              <string>D2</string>
+            </list>
+            <list>
+              <string>B4</string>
+              <string>C4</string>
+              <string>D4</string>
+            </list>
+            <list>
+              <string>B5</string>
+              <string>C5</string>
+              <string>D5</string>
+            </list>
+            <list>
+              <string>C1</string>
+              <string>D1</string>
+            </list>
+          </formacaoDesafiado>
+          <plays>
+            <string>Player: player1 | Move: [C1] | Hit: sim</string>
+            <string>Player: player2 | Move: [A2] | Hit: sim</string>
+            <string>Player: player1 | Move: [D1] | Hit: sim</string>
+            <string>Player: player2 | Move: [D3] | Hit: não</string>
+            <string>Player: player1 | Move: [C2] | Hit: sim</string>
+            <string>Player: player2 | Move: [] | Hit: não</string>
+            <string>Player: player1 | Move: [D2] | Hit: sim</string>
+            <string>Player: player2 | Move: [A1] | Hit: sim</string>
+            <string>Player: player1 | Move: [C5] | Hit: sim</string>
+            <string>Player: player2 | Move: [D4] | Hit: não</string>
+            <string>Player: player1 | Move: [D5] | Hit: sim</string>
+            <string>Player: player2 | Move: [D3] | Hit: não</string>
+            <string>Player: player2 | Move: [E3] | Hit: sim</string>
+            <string>Player: player1 | Move: [B5] | Hit: sim</string>
+            <string>Player: player2 | Move: [A4] | Hit: não</string>
+            <string>Player: player1 | Move: [C4] | Hit: sim</string>
+            <string>Player: player2 | Move: [E3] | Hit: não</string>
+            <string>Player: player2 | Move: [E4] | Hit: não</string>
+            <string>Player: player1 | Move: [D4] | Hit: sim</string>
+            <string>Player: player2 | Move: [B1] | Hit: não</string>
+            <string>Player: player1 | Move: [B4] | Hit: sim</string>
+          </plays>
+        </model.Historico>
+      </historicos>
     </model.Player>
     <model.Player>
-      <nickname>player3</nickname>
-      <email>player3@hotmail.com</email>
+      <nickname>player2</nickname>
+      <email>player2@hotmail.com</email>
       <password>12345678</password>
       <pontuacao>0</pontuacao>
       <formacao>
         <list>
-          <string>C1</string>
-          <string>B1</string>
+          <string>C2</string>
+          <string>D2</string>
         </list>
         <list>
-          <string>A5</string>
+          <string>B4</string>
+          <string>C4</string>
+          <string>D4</string>
+        </list>
+        <list>
           <string>B5</string>
           <string>C5</string>
+          <string>D5</string>
         </list>
         <list>
-          <string>A3</string>
-          <string>A2</string>
-        </list>
-        <list>
-          <string>D2</string>
-          <string>D3</string>
-          <string>D4</string>
+          <string>C1</string>
+          <string>D1</string>
         </list>
       </formacao>
-    </model.Player>
-    <model.Player>
-      <nickname>player4</nickname>
-      <email>player4@hotmail.com</email>
-      <password>12345678</password>
-      <pontuacao>0</pontuacao>
-      <formacao>
-        <list>
-          <string>A1</string>
-          <string>B1</string>
-        </list>
-        <list>
-          <string>A5</string>
-          <string>B5</string>
-        </list>
-        <list>
-          <string>D2</string>
-          <string>D3</string>
-          <string>D4</string>
-        </list>
-        <list>
-          <string>E2</string>
-          <string>E3</string>
-          <string>E4</string>
-        </list>
-      </formacao>
+      <historicos/>
     </model.Player>
   </usuariosCadastrados>
 </controller.PlayerControl>

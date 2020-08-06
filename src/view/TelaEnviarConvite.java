@@ -94,9 +94,15 @@ public class TelaEnviarConvite extends ScreenSetup {
                 // -- Recuperar player selecionado --
                 PlayerControl control = new Persistencia().recuperarController();
                 Player desafiado = control.pesquisarNickName(inputBuscarJogador.getText());
-                dispose();
-                JOptionPane.showMessageDialog(null, "A PARTIDA IRÁ COMEÇAR EM BREVE...", "ϟ - BATALHE! - ϟ", JOptionPane.WARNING_MESSAGE);
-                new TelaPartida(player, desafiado);
+
+                if(desafiado == null) {
+                    JOptionPane.showMessageDialog(null, "PLAYER NÃO ENCONTRADO! TENTE NOVAMENTE.", "≋ - ATENÇÃO! - ≋", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    dispose();
+                    JOptionPane.showMessageDialog(null, "A PARTIDA IRÁ COMEÇAR EM BREVE...", "≋ - BATALHE! - ≋", JOptionPane.WARNING_MESSAGE);
+                    new TelaPartida(player, desafiado);
+                }
+
             }
         });
         add(btnPesquisar, 0);
@@ -119,18 +125,7 @@ public class TelaEnviarConvite extends ScreenSetup {
         modeloTabela.addColumn("Nickname");
         modeloTabela.addColumn("Pontuação");
 
-        DefaultTableCellRenderer centralizar = new DefaultTableCellRenderer();
-        centralizar.setHorizontalAlignment(SwingConstants.CENTER);
-
-        JTable tabelaRanking = new JTable(modeloTabela);
-        tabelaRanking.setRowHeight(20);
-        tabelaRanking.setBackground(Cores.COLOR_AZUL_CLARO);
-        tabelaRanking.setForeground(Color.WHITE);
-        tabelaRanking.setSelectionBackground(Cores.COLOR_AZUL);
-        tabelaRanking.setSelectionForeground(Color.WHITE);
-        tabelaRanking.getColumnModel().getColumn(0).setCellRenderer(centralizar);
-        tabelaRanking.getColumnModel().getColumn(1).setCellRenderer(centralizar);
-        tabelaRanking.getColumnModel().getColumn(2).setCellRenderer(centralizar);
+        JTable tabelaRanking = new TableMod(modeloTabela, 3);
         tabelaRanking.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             public void valueChanged(ListSelectionEvent e) {
                 // -- Configurar JTextField de pesquisa com o nickname selecionado na tabela

@@ -6,6 +6,7 @@ import java.util.regex.*;
 
 // -- Pacotes --
 import exceptions.*;
+import model.Historico;
 import model.Player;
 import persistencia.Persistencia;
 
@@ -94,6 +95,12 @@ public class PlayerControl {
     public void salvarPontuacaoPerda(Player player, int pontuacao) {
         Player playerCadastrado = pesquisarPlayer(player);
         playerCadastrado.setPontuacao(player.getPontuacao() - pontuacao);
+        salvar();
+    }
+
+    public void salvarHistorico(Player player, Historico historico) {
+        Player playerCadastrado = pesquisarPlayer(player);
+        playerCadastrado.addHistorico(historico);
         salvar();
     }
 

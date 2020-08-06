@@ -9,6 +9,7 @@ public class Player implements Comparable<Player> {
     private String password;
     private int pontuacao;
     private List<List<String>> formacao = new ArrayList<List<String>>();
+    private List<Historico> historicos = new ArrayList<Historico>();
 
     public Player(String nickname, String email, String password) {
         this.nickname 	= nickname;
@@ -57,6 +58,14 @@ public class Player implements Comparable<Player> {
 
     public void setFormacao(List<List<String>> formacao) {
         this.formacao = formacao;
+    }
+
+    public void addHistorico(Historico historico) {
+        historicos.add(historico);
+    }
+
+    public List<Historico> getHistorico() {
+        return historicos;
     }
 
     @Override

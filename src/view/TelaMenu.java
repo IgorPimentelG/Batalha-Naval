@@ -77,7 +77,7 @@ public class TelaMenu extends ScreenSetup {
         btnHistico.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                new TelaHistorico();
+                new TelaHistorico(player);
             }
         });
         add(btnHistico,0);

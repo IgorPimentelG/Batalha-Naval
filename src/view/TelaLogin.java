@@ -50,7 +50,7 @@ public class TelaLogin extends ScreenSetup {
 
     private void adicionarInputs() {
         inputEmail = new ModInput(240, 193, 315);
-        inputEmail.setText("igor.pimentel.msi@hotmail.com");
+        inputEmail.setText("player1@hotmail.com");
         add(inputEmail, 0);
 
         inputPassword = new JPasswordField("12345678");
@@ -85,7 +85,7 @@ public class TelaLogin extends ScreenSetup {
                 String password = String.valueOf(inputPassword.getPassword());
 
                 if(email.isEmpty() && password.isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "PREENCHA TODOS OS DADOS!", "ϟ ATENÇÃO! ϟ", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "PREENCHA TODOS OS DADOS!", "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
                 } else {
                     try {
                         Persistencia persistencia = new Persistencia();
@@ -95,7 +95,7 @@ public class TelaLogin extends ScreenSetup {
                         dispose();
                         new TelaMenu(player);
                     } catch(Exception erro) {
-                        JOptionPane.showMessageDialog(null, erro.getMessage(), "ϟ ATENÇÃO! ϟ", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, erro.getMessage(), "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
                     }
 
                 }

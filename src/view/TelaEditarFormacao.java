@@ -91,13 +91,13 @@ public class TelaEditarFormacao extends ScreenSetup {
 
                     playerControl.salvarFormacao(player, mapa.getEditarFormacao().getFormacao());
 
-                    JOptionPane.showMessageDialog(null, "FORMAÇÃO SALVA COM SUCESSO!", "# AVISO #", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "FORMAÇÃO SALVA COM SUCESSO!", "≋ AVISO ≋", JOptionPane.INFORMATION_MESSAGE);
 
                     dispose();
 
                     new TelaMenu(playerControl.pesquisarPlayer(player));
                 } else {
-                    JOptionPane.showMessageDialog(null, "ADICIONE TODAS AS EMBARCAÇÕES DISPONÍVEIS!", "ATENÇÃO!", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "ADICIONE TODAS AS EMBARCAÇÕES DISPONÍVEIS!", "≋ ATENÇÃO! ≋", JOptionPane.WARNING_MESSAGE);
                 }
             }
         });

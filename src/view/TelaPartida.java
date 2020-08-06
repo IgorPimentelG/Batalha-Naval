@@ -6,7 +6,9 @@ import java.awt.event.*;
 import javax.swing.*;
 
 // -- Pacotes --
+import controller.PlayerControl;
 import model.*;
+import persistencia.Persistencia;
 import recursos.view.*;
 import recursos.*;
 
@@ -85,7 +87,22 @@ public class TelaPartida extends ScreenSetup {
         btnDesistir.setBounds(220, 80, 150, 25);
         btnDesistir.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                
+                PlayerControl control = new Persistencia().recuperarController();
+
+                String vencedor = "";
+
+                dispose();
+
+                control.salvarPontuacaoPerda(desafiante, 5);
+
+                if(desafiado == null) {
+                    vencedor = "COMPUTADOR";
+                } else {
+                   vencedor = desafiado.getNickname();
+                   control.salvarPontuacaoGanha(desafiado, 2);
+                }
+
+                new TelaResultado(vencedor, "VOCÊ PERDEU -5 PONTOS!", desafiante);
             }
         });
         add(btnDesistir, 0);

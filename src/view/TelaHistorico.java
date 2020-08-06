@@ -3,17 +3,26 @@ package view;
 // -- APIs --
 import java.awt.*;
 import java.awt.event.*;
+import java.util.List;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 // -- Pacotes --
+import controller.PlayerControl;
+import model.Historico;
+import model.Player;
+import persistencia.Persistencia;
 import recursos.*;
 import recursos.view.*;
 
 public class TelaHistorico extends ScreenSetup {
 
-    public TelaHistorico() {
+    private Player player;
+
+    public TelaHistorico(Player player) {
         super("World of Warships - Histórico", 585, 505, Imagens.BACKGROUND_GAME);
+
+        this.player = player;
 
         // -- Adicionar Componentes a View --
         adicionarCard();
@@ -61,6 +70,7 @@ public class TelaHistorico extends ScreenSetup {
         btnVoltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
+                new TelaMenu(player);
             }
         });
         add(btnVoltar, 0);
@@ -72,10 +82,29 @@ public class TelaHistorico extends ScreenSetup {
         modeloTabela.addColumn("Adversário");
         modeloTabela.addColumn("Resumo");
 
-        JTable tabelaHistorico = new JTable(modeloTabela);
+        JTable tabelaHistorico = new TableMod(modeloTabela, 3);
+
+        List<Historico> historicos = player.getHistorico();
+
+        for(Historico historico : historicos) {
+            System.out.println(historico.getDesafiado());
+
+            String resumo = "GANHOU!";
+
+            if(!historico.getVencedor().equals(player.getNickname())) {
+                resumo = "PERDEU!";
+            }
+
+            Object[] dados = {
+                    historico.getDataDaPartida(),
+                    historico.getDesafiado(),
+                    resumo
+            };
+            modeloTabela.addRow(dados);
+        }
 
         JScrollPane painelTabelaHistorico = new JScrollPane(tabelaHistorico);
-        painelTabelaHistorico.setBounds(120, 150, 340, 250);
+        painelTabelaHistorico.setBounds(70, 140, 440, 255);
         add(painelTabelaHistorico, 0);
     }
 }

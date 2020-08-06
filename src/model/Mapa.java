@@ -115,43 +115,46 @@ public class Mapa {
 
             JButton celula = (JButton) (e.getSource());        // Obter JButton selecionado no mapa
 
-            try {
-                verificarPosicao(celula);
+            if(!celula.getText().isEmpty()) {
+                try {
+                    verificarPosicao(celula);
 
-                // ----------- Configurar JButton -----------
-                celula.setBackground(Cores.COLOR_LARANJA);
-                celula.setText("");
-                celula.setIcon(Imagens.ICON_PIRATA);
-                celula.setEnabled(false);
-                // ----------------------------------------
+                    // ----------- Configurar JButton -----------
+                    celula.setBackground(Cores.COLOR_LARANJA);
+                    celula.setText("");
+                    celula.setIcon(Imagens.ICON_PIRATA);
+                    // ----------------------------------------
 
-                editarFormacao.reduzirTamanhoEmbarcacaoAtual();
+                    editarFormacao.reduzirTamanhoEmbarcacaoAtual();
 
-                // -- Verificar se todas as partes da embaração foi posicionado --
-                if (editarFormacao.getTamanhoEmbarcacaoAtual() == 0) {
-                    // -- Configurar nova embarcação --
-                    editarFormacao.setOrientacaoEmbarcacaoHorizontal(null);
-                    editarFormacao.setOrientacaoEmbarcacaoVertical(null);
+                    // -- Verificar se todas as partes da embaração foi posicionado --
+                    if (editarFormacao.getTamanhoEmbarcacaoAtual() == 0) {
+                        // -- Configurar nova embarcação --
+                        editarFormacao.setOrientacaoEmbarcacaoHorizontal(null);
+                        editarFormacao.setOrientacaoEmbarcacaoVertical(null);
 
-                    // -- Salvar embarcação e limpar lista --
-                    editarFormacao.addFormacao(editarFormacao.getLocalizacaoDaEmbarcacao());
-                    editarFormacao.setLocalizacaoDaEmbarcacao(new ArrayList<String>());
+                        // -- Salvar embarcação e limpar lista --
+                        editarFormacao.addFormacao(editarFormacao.getLocalizacaoDaEmbarcacao());
+                        editarFormacao.setLocalizacaoDaEmbarcacao(new ArrayList<String>());
 
-                    if (editarFormacao.getQntdEmbarcacoes2PDisponivel() != 0 || editarFormacao.getQntdEmbarcacoes3PDisponivel() != 0) {
-                        editarFormacao.setTelaEscolherEmbarcacoes(new TelaEscolherEmbarcacoes(
-                                editarFormacao.getTelaEditarFormacao(), String.valueOf(editarFormacao.getQntdEmbarcacoes2PDisponivel()),
-                                String.valueOf(editarFormacao.getQntdEmbarcacoes3PDisponivel())));
-                    } else {
-                        for (List<JButton> linha : matriz) {
-                            List<JButton> celulas = linha;
-                            for (JButton posicao : celulas) {
-                                posicao.setEnabled(false);
+                        if (editarFormacao.getQntdEmbarcacoes2PDisponivel() != 0 || editarFormacao.getQntdEmbarcacoes3PDisponivel() != 0) {
+                            editarFormacao.setTelaEscolherEmbarcacoes(new TelaEscolherEmbarcacoes(
+                                    editarFormacao.getTelaEditarFormacao(), String.valueOf(editarFormacao.getQntdEmbarcacoes2PDisponivel()),
+                                    String.valueOf(editarFormacao.getQntdEmbarcacoes3PDisponivel())));
+                        } else {
+                            for (List<JButton> linha : matriz) {
+                                List<JButton> celulas = linha;
+                                for (JButton posicao : celulas) {
+                                    posicao.setEnabled(false);
+                                }
                             }
                         }
                     }
+                } catch (Exception erro) {
+                    JOptionPane.showMessageDialog(null, erro.getMessage(), "ϟ ATENÇÃO! ϟ", JOptionPane.ERROR_MESSAGE);
                 }
-            } catch (Exception erro) {
-                JOptionPane.showMessageDialog(null, erro.getMessage(), "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "POSIÇÃO JÁ FOI SELECIONADA!", "ϟ ATENÇÃO! ϟ", JOptionPane.ERROR_MESSAGE);
             }
         }
 

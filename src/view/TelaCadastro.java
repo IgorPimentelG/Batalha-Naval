@@ -102,7 +102,7 @@ public class TelaCadastro extends ScreenSetup {
                 String email = inputEmail.getText().toLowerCase();
                 String password = String.valueOf(inputPassword.getPassword());
 
-                // ValidaÃ§Ã£o dos Dados
+                // Validação dos Dados
                 if(!(nickname.isEmpty() && email.isEmpty() && password.isEmpty())) {
                     if(password.length() < 8) {
                         JOptionPane.showMessageDialog(null, "A SENHA NECESSITA NO MÁNIMO 8 CARACTERES!", "≋ SENHA CURTA! ≋", JOptionPane.WARNING_MESSAGE);

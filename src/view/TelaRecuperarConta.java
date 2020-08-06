@@ -69,14 +69,14 @@ public class TelaRecuperarConta extends ScreenSetup {
 
                     JOptionPane.showMessageDialog(null,
                             "SENHA ALTERADA COM SUCESSO! VERIFIQUE SEU E-MAIL.",
-                            "ϟ SUCESSO! ϟ", JOptionPane.WARNING_MESSAGE);
+                            "≋ SUCESSO! ≋", JOptionPane.WARNING_MESSAGE);
 
                     dispose();
                     new TelaLogin();
                 } catch (DadosInvalidosException dadosInvalidosException) {
                     JOptionPane.showMessageDialog(null,
                             dadosInvalidosException.getMessage(),
-                            "OPERAÇÃO INVÁLIDA!", JOptionPane.ERROR_MESSAGE);
+                            "≋ OPERAÇÃO INVÁLIDA! ≋", JOptionPane.ERROR_MESSAGE);
                 } catch (MessagingException messagingException) {
                     messagingException.printStackTrace();
                 }
