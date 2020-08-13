@@ -1,4 +1,4 @@
-package email;
+package recursos.email;
 
 import java.util.Properties;
 

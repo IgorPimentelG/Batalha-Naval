@@ -18,7 +18,7 @@ public class TelaLogin extends ScreenSetup {
     private JPasswordField inputPassword;
 
     public TelaLogin() {
-        super("Sign In", 800, 565, Imagens.BACKGROUN_SIGN_IN);
+        super("World of Warships - Sign In", 800, 565, Imagens.BACKGROUN_SIGN_IN);
 
         // -- Adicionar Componentes a View --
         adicionarCard();

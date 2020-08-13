@@ -20,7 +20,7 @@ public class TelaCadastro extends ScreenSetup {
     private JPasswordField inputConfirmPassword;
 
     public TelaCadastro() {
-        super("Sign Up", 800, 580, Imagens.BACKGROUN_SIGN_UP);
+        super("World of Warships - Sign Up", 800, 580, Imagens.BACKGROUN_SIGN_UP);
 
         // -- Adicionar Componentes a View --
         adicionarCard();

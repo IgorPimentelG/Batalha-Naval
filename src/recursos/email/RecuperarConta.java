@@ -1,4 +1,4 @@
-package email;
+package recursos.email;
 
 import javax.mail.*;
 import javax.mail.Transport;

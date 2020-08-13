@@ -15,7 +15,7 @@ public class TelaMenu extends ScreenSetup {
     private Player player;
 
     public TelaMenu(Player player) {
-        super("World of Warships - Menu", 550, 480, Imagens.BACKGROUN_SIGN_MENU);
+        super("World of Warships - Menu", 550, 480, Imagens.BACKGROUN_MENU);
 
         this.player = player;
 

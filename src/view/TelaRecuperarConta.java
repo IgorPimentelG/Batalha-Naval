@@ -7,7 +7,7 @@ import javax.mail.MessagingException;
 import javax.swing.*;
 
 // -- Pacotes --
-import email.RecuperarConta;
+import recursos.email.RecuperarConta;
 import exceptions.DadosInvalidosException;
 import recursos.*;
 import recursos.view.*;
@@ -17,7 +17,7 @@ public class TelaRecuperarConta extends ScreenSetup {
     private JTextField inputEmail;
 
     public TelaRecuperarConta() {
-        super("Recover Password", 600, 415, Imagens.BACKGROUN_SIGN_RECUPERAR_PASSWORD);
+        super("Recover Password", 600, 415, Imagens.BACKGROUN_RECUPERAR_PASSWORD);
 
         // -- Adicionar Componentes a View --
         adicionarCard();

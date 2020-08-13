@@ -6,23 +6,27 @@ import java.awt.event.*;
 import java.util.List;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.*;
 
 // -- Pacotes --
-import controller.PlayerControl;
-import model.Historico;
-import model.Player;
-import persistencia.Persistencia;
+import model.*;
 import recursos.*;
 import recursos.view.*;
 
 public class TelaHistorico extends ScreenSetup {
 
     private Player player;
+    private List<Historico> historicos;
+    private TelaHistorico telaHistorico;
+
+    private JTable tabelaHistorico;
 
     public TelaHistorico(Player player) {
         super("World of Warships - Histórico", 585, 505, Imagens.BACKGROUND_GAME);
 
         this.player = player;
+        this.telaHistorico = this;
+        historicos  = player.getHistorico();
 
         // -- Adicionar Componentes a View --
         adicionarCard();
@@ -60,13 +64,35 @@ public class TelaHistorico extends ScreenSetup {
     }
 
     private void adicionarButtons() {
-        JButton btnDetalhar = new ModButton("DETALHAR", 140, 415, 140);
-        btnDetalhar.setBackground(Cores.COLOR_VERDE);
+        JButton btnDetalhar = new ModButton("DETALHAR", 70, 415, 135, 30);
+        btnDetalhar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Historico historicoDetalhado = null;
+
+                String dataDoHistorico = historicos.get(tabelaHistorico.getSelectedRow()).getDataDaPartida();
+
+                for(Historico historicoSalvo : historicos) {
+                    if(historicoSalvo.getDataDaPartida().equals(dataDoHistorico)) {
+                        historicoDetalhado = historicoSalvo;
+                        break;
+                    }
+                }
+                setVisible(false);
+                new TelaDetalhar(historicoDetalhado, telaHistorico);
+            }
+        });
         add(btnDetalhar, 0);
 
-        JButton btnVoltar = new ModButton("⇖ VOLTAR", 300, 415, 140);
-        btnVoltar.setForeground(Color.WHITE);
-        btnVoltar.setBackground(Cores.COLOR_LARANJA);
+        JButton btnRelatorio = new ModButton("RELATÓRIO", 225, 415, 135, 30);
+        btnRelatorio.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                setVisible(false);
+                new TelaGerarRelatorio(telaHistorico);
+            }
+        });
+        add(btnRelatorio, 0);
+
+        JButton btnVoltar = new ModButton("⇖ VOLTAR", 375, 415, 135, 30);
         btnVoltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
@@ -82,13 +108,9 @@ public class TelaHistorico extends ScreenSetup {
         modeloTabela.addColumn("Adversário");
         modeloTabela.addColumn("Resumo");
 
-        JTable tabelaHistorico = new TableMod(modeloTabela, 3);
-
-        List<Historico> historicos = player.getHistorico();
+        tabelaHistorico = new TableMod(modeloTabela, 3);
 
         for(Historico historico : historicos) {
-            System.out.println(historico.getDesafiado());
-
             String resumo = "GANHOU!";
 
             if(!historico.getVencedor().equals(player.getNickname())) {
@@ -106,6 +128,171 @@ public class TelaHistorico extends ScreenSetup {
         JScrollPane painelTabelaHistorico = new JScrollPane(tabelaHistorico);
         painelTabelaHistorico.setBounds(70, 140, 440, 255);
         add(painelTabelaHistorico, 0);
+    }
+
+    // -- Inner Class Relatório --
+    private class TelaGerarRelatorio extends ScreenSetup {
+
+        private TelaHistorico telaHistorico;
+
+        private TelaGerarRelatorio(TelaHistorico telaHistorico) {
+            super("Relatório", 255, 255, Imagens.BACKGROUN_MENU);
+
+            this.telaHistorico = telaHistorico;
+
+            adicionarLabel();
+            adicionarButtons();
+
+            setVisible(true);
+        }
+
+        private void adicionarLabel() {
+            JLabel lblTitulo = new JLabel("GERAR RELATÓRIO");
+            lblTitulo.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 14));
+            lblTitulo.setBounds(0, 20, 238, 18);
+            lblTitulo.setHorizontalAlignment(JLabel.CENTER);
+            lblTitulo.setForeground(Color.WHITE);
+            add(lblTitulo, 0);
+        }
+
+        private void adicionarButtons() {
+            JButton btnRelatorioPartidasGanhas = new ModButton("PARTIDAS GANHAS", 26, 60, 185, 35);
+            add(btnRelatorioPartidasGanhas, 0);
+
+            JButton btnRelatorioPartidasPerdidas = new ModButton("PARTIDAS PERDIDAS", 26, 110, 185, 35);
+            add(btnRelatorioPartidasPerdidas, 0);
+
+            JButton btnVoltar = new ModButton("⇖ VOLTAR", 26, 160, 185, 35);
+            btnVoltar.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    dispose();
+                    telaHistorico.setVisible(true);
+                }
+            });
+            add(btnVoltar, 0);
+
+        }
+    }
+
+    private class TelaDetalhar extends ScreenSetup {
+
+        private Historico historico;
+        private TelaHistorico telaHistorico;
+
+        private TelaDetalhar(Historico historico, TelaHistorico telaHistorico) {
+            super("TELA DETALHAR", 470, 525, Imagens.BACKGROUND_DETALHAR);
+
+            this.historico      = historico;
+            this.telaHistorico  = telaHistorico;
+
+            adicionarCard();
+            adicionarSeparador();
+            adicionarLabels();
+            adicionarAreaTexto();
+            adicionarButton();
+
+            setVisible(true);
+        }
+
+        private void adicionarLabels() {
+            JLabel lblData = new JLabel("Data e Hora: " + historico.getDataDaPartida());
+            lblData.setBounds(50, 135, 350, 20);
+            lblData.setHorizontalAlignment(JLabel.CENTER);
+            add(lblData, 0);
+
+            JLabel lblVencedor = new JLabel("Vencedor: " + historico.getVencedor());
+            lblVencedor.setBounds(50, 153, 350, 20);
+            lblVencedor.setHorizontalAlignment(JLabel.CENTER);
+            add(lblVencedor, 0);
+
+            JLabel lblFormacao = new JLabel("Formações");
+            lblFormacao.setHorizontalAlignment(JLabel.CENTER);
+            lblFormacao.setBounds(50, 185, 350, 20);
+            add(lblFormacao, 0);
+
+            JLabel lblFormacaoDesafiante = new JLabel("Desafiante: " + historico.getFormacaoDesafiante().toString());
+            lblFormacaoDesafiante.setBounds(50, 200, 350, 40);
+            lblFormacaoDesafiante.setHorizontalAlignment(JLabel.CENTER);
+            add(lblFormacaoDesafiante, 0);
+
+            JLabel lblFormacaoDesafiado =  new JLabel("Desafiado: " + historico.getFormacaoDesafiado());
+            lblFormacaoDesafiado.setBounds(50, 225, 350, 20);
+            lblFormacaoDesafiado.setHorizontalAlignment(JLabel.CENTER);
+            add(lblFormacaoDesafiado, 0 );
+
+            JLabel lblResumo = new JLabel("Resumo");
+            lblResumo.setBounds(50, 257, 350, 20);
+            lblResumo.setHorizontalAlignment(JLabel.CENTER);
+            add(lblResumo, 0);
+        }
+
+        private void adicionarCard() {
+            Card card = new Card();
+
+            JLabel cardSuperior = new JLabel(card.gerarCardSuperior(350, 50));
+            cardSuperior.setBounds(50, 80, 350, 50);
+            add(cardSuperior, 0);
+
+            JLabel cardInferior = new JLabel(card.gerarCardInferior(350, 300));
+            cardInferior.setBounds(50, 130, 350, 300);
+            add(cardInferior, 0);
+
+            JLabel lblLogo = new JLabel(Imagens.LOGO_SUPERIOR);
+            lblLogo.setBounds(50, 20, 350, 100);
+            lblLogo.setHorizontalAlignment(JLabel.CENTER);
+            add(lblLogo, 0);
+        }
+
+        private void adicionarSeparador() {
+            JSeparator primeiroSeparador = new JSeparator(JSeparator.HORIZONTAL);
+            primeiroSeparador.setBounds(55, 180, 340, 2);
+            primeiroSeparador.setForeground(Color.GRAY);
+            add(primeiroSeparador, 0);
+
+            JSeparator segundoSeparador = new JSeparator(JSeparator.HORIZONTAL);
+            segundoSeparador.setBounds(55, 252,340, 2);
+            segundoSeparador.setForeground(Color.GRAY);
+            add(segundoSeparador, 0);
+        }
+
+        private void adicionarAreaTexto() {
+            JTextPane textHistorico = new JTextPane();
+            textHistorico.setText(combinarTexto());
+            textHistorico.setAutoscrolls(true);
+            textHistorico.setEnabled(false);
+            textHistorico.setForeground(Color.WHITE);
+            textHistorico.setBackground(Cores.COLOR_AZUL);
+
+            StyledDocument styleDoc = textHistorico.getStyledDocument();
+            SimpleAttributeSet centralizar = new SimpleAttributeSet();
+            StyleConstants.setAlignment(centralizar, StyleConstants.ALIGN_CENTER);
+            styleDoc.setParagraphAttributes(0, styleDoc.getLength(), centralizar, false);
+
+            JScrollPane caixaScrollBar = new JScrollPane(textHistorico, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+            caixaScrollBar.setBounds(80, 280, 290, 150);
+            add(caixaScrollBar, 0);
+        }
+
+        private void adicionarButton() {
+            JButton btnVoltar = new ModButton("⇖ VOLTAR", 50, 440, 350, 30);
+            btnVoltar.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    dispose();
+                    telaHistorico.setVisible(true);
+                }
+            });
+            add(btnVoltar, 0);
+        }
+
+        private String combinarTexto() {
+            String texto = "";
+
+            for(String jogada : historico.getPlays()) {
+                texto += jogada + "\n";
+            }
+
+            return texto;
+        }
     }
 }
 
