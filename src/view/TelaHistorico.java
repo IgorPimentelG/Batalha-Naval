@@ -9,6 +9,8 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.text.*;
 
 // -- Pacotes --
+import controller.HistoricoControl;
+import jdk.nashorn.internal.scripts.JO;
 import model.*;
 import recursos.*;
 import recursos.view.*;
@@ -157,9 +159,31 @@ public class TelaHistorico extends ScreenSetup {
 
         private void adicionarButtons() {
             JButton btnRelatorioPartidasGanhas = new ModButton("PARTIDAS GANHAS", 26, 60, 185, 35);
+            btnRelatorioPartidasGanhas.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    try {
+                        new HistoricoControl().gerarRelatorioPartidasGanhas(historicos, player);
+                        JOptionPane.showMessageDialog(null, "RELATÓRIO GERADO COM SUCESSO!", "RELATÓRIO", JOptionPane.INFORMATION_MESSAGE);
+                    } catch(Exception erro) {
+                        JOptionPane.showMessageDialog(null, "ACONTECEU UM ERRO AO GERAR O RELATÓRIO!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, erro.getMessage(), "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            });
             add(btnRelatorioPartidasGanhas, 0);
 
             JButton btnRelatorioPartidasPerdidas = new ModButton("PARTIDAS PERDIDAS", 26, 110, 185, 35);
+            btnRelatorioPartidasPerdidas.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    try {
+                        new HistoricoControl().gerarRelatorioPartidasPerdidas(historicos, player);
+                        JOptionPane.showMessageDialog(null, "RELATÓRIO GERADO COM SUCESSO!", "RELATÓRIO", JOptionPane.INFORMATION_MESSAGE);
+                    } catch (Exception erro) {
+                        JOptionPane.showMessageDialog(null, "ACONTECEU UM ERRO AO GERAR O RELATÓRIO!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, erro.getMessage(), "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            });
             add(btnRelatorioPartidasPerdidas, 0);
 
             JButton btnVoltar = new ModButton("⇖ VOLTAR", 26, 160, 185, 35);
