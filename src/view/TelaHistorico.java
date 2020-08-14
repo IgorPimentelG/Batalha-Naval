@@ -113,6 +113,7 @@ public class TelaHistorico extends ScreenSetup {
         tabelaHistorico = new TableMod(modeloTabela, 3);
 
         for(Historico historico : historicos) {
+
             String resumo = "GANHOU!";
 
             if(!historico.getVencedor().equals(player.getNickname())) {
@@ -151,42 +152,43 @@ public class TelaHistorico extends ScreenSetup {
         private void adicionarLabel() {
             JLabel lblTitulo = new JLabel("GERAR RELATÓRIO");
             lblTitulo.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 14));
-            lblTitulo.setBounds(0, 20, 238, 18);
+            lblTitulo.setBounds(0, 20, 255, 18);
             lblTitulo.setHorizontalAlignment(JLabel.CENTER);
             lblTitulo.setForeground(Color.WHITE);
             add(lblTitulo, 0);
         }
 
         private void adicionarButtons() {
-            JButton btnRelatorioPartidasGanhas = new ModButton("PARTIDAS GANHAS", 26, 60, 185, 35);
+            JButton btnRelatorioPartidasGanhas = new ModButton("PARTIDAS GANHAS", 35, 60, 185, 35);
             btnRelatorioPartidasGanhas.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     try {
                         new HistoricoControl().gerarRelatorioPartidasGanhas(historicos, player);
-                        JOptionPane.showMessageDialog(null, "RELATÓRIO GERADO COM SUCESSO!", "RELATÓRIO", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "RELATÓRIO GERADO COM SUCESSO!", "≋ RELATÓRIO ≋", JOptionPane.INFORMATION_MESSAGE);
                     } catch(Exception erro) {
-                        JOptionPane.showMessageDialog(null, "ACONTECEU UM ERRO AO GERAR O RELATÓRIO!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
-                        JOptionPane.showMessageDialog(null, erro.getMessage(), "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "ACONTECEU UM ERRO AO GERAR O RELATÓRIO!", "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, erro.getMessage(), "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
                     }
                 }
             });
             add(btnRelatorioPartidasGanhas, 0);
 
-            JButton btnRelatorioPartidasPerdidas = new ModButton("PARTIDAS PERDIDAS", 26, 110, 185, 35);
+            JButton btnRelatorioPartidasPerdidas = new ModButton("PARTIDAS PERDIDAS", 35, 110, 185, 35);
             btnRelatorioPartidasPerdidas.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     try {
+
                         new HistoricoControl().gerarRelatorioPartidasPerdidas(historicos, player);
-                        JOptionPane.showMessageDialog(null, "RELATÓRIO GERADO COM SUCESSO!", "RELATÓRIO", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "RELATÓRIO GERADO COM SUCESSO!", "≋ RELATÓRIO ≋", JOptionPane.INFORMATION_MESSAGE);
                     } catch (Exception erro) {
-                        JOptionPane.showMessageDialog(null, "ACONTECEU UM ERRO AO GERAR O RELATÓRIO!", "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
-                        JOptionPane.showMessageDialog(null, erro.getMessage(), "ATENÇÃO!", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "ACONTECEU UM ERRO AO GERAR O RELATÓRIO!", "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, erro.getMessage(), "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
                     }
                 }
             });
             add(btnRelatorioPartidasPerdidas, 0);
 
-            JButton btnVoltar = new ModButton("⇖ VOLTAR", 26, 160, 185, 35);
+            JButton btnVoltar = new ModButton("⇖ VOLTAR", 35, 160, 185, 35);
             btnVoltar.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     dispose();
@@ -236,11 +238,13 @@ public class TelaHistorico extends ScreenSetup {
 
             JLabel lblFormacaoDesafiante = new JLabel("Desafiante: " + historico.getFormacaoDesafiante().toString());
             lblFormacaoDesafiante.setBounds(50, 200, 350, 40);
+            lblFormacaoDesafiante.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 11));
             lblFormacaoDesafiante.setHorizontalAlignment(JLabel.CENTER);
             add(lblFormacaoDesafiante, 0);
 
             JLabel lblFormacaoDesafiado =  new JLabel("Desafiado: " + historico.getFormacaoDesafiado());
             lblFormacaoDesafiado.setBounds(50, 225, 350, 20);
+            lblFormacaoDesafiado.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 11));
             lblFormacaoDesafiado.setHorizontalAlignment(JLabel.CENTER);
             add(lblFormacaoDesafiado, 0 );
 
@@ -286,6 +290,7 @@ public class TelaHistorico extends ScreenSetup {
             textHistorico.setEnabled(false);
             textHistorico.setForeground(Color.WHITE);
             textHistorico.setBackground(Cores.COLOR_AZUL);
+            textHistorico.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 10));
 
             StyledDocument styleDoc = textHistorico.getStyledDocument();
             SimpleAttributeSet centralizar = new SimpleAttributeSet();

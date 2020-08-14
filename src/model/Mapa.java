@@ -15,7 +15,8 @@ import view.*;
 
 public class Mapa {
 
-    private List<List<JButton>> matriz = new ArrayList<List<JButton>>();
+    private List<List<JButton>> matrizButton = new ArrayList<List<JButton>>();
+    private List<List<String>> matrizString = new ArrayList<List<String>>();
 
     private JButton celula;
 
@@ -51,8 +52,8 @@ public class Mapa {
 
         for (int i = 1; i < 6; i++) {
 
-            List<JButton> linha = new ArrayList<JButton>();
-
+            List<JButton> linhaButton   = new ArrayList<JButton>();
+            List<String> linhaString    = new ArrayList<String>();
             for (int j = 1; j < 6; j++) {
 
                 switch (contador) {
@@ -87,21 +88,32 @@ public class Mapa {
                     celula.addActionListener(new startPartida());
                 }
 
-                linha.add(celula);
+                linhaButton.add(celula);
+                linhaString.add(posicao);
                 painel.add(celula);
             }
-            matriz.add(linha);
+            matrizString.add(linhaString);
+            matrizButton.add(linhaButton);
         }
         return painel;
     }
 
-    public List<List<JButton>> getMatriz() {
+    public List<List<JButton>> getMatrizButton() {
 
-        if (matriz.isEmpty()) {
+        if (matrizButton.isEmpty()) {
             gerarMapa();
         }
 
-        return matriz;
+        return matrizButton;
+    }
+
+    public List<List<String>> getMatrizString() {
+
+        if(matrizString.isEmpty()) {
+            gerarMapa();
+        }
+
+        return matrizString;
     }
 
     // -- Getters --
@@ -142,7 +154,7 @@ public class Mapa {
                                     editarFormacao.getTelaEditarFormacao(), String.valueOf(editarFormacao.getQntdEmbarcacoes2PDisponivel()),
                                     String.valueOf(editarFormacao.getQntdEmbarcacoes3PDisponivel())));
                         } else {
-                            for (List<JButton> linha : matriz) {
+                            for (List<JButton> linha : matrizButton) {
                                 List<JButton> celulas = linha;
                                 for (JButton posicao : celulas) {
                                     posicao.setEnabled(false);
@@ -151,10 +163,10 @@ public class Mapa {
                         }
                     }
                 } catch (Exception erro) {
-                    JOptionPane.showMessageDialog(null, erro.getMessage(), "ϟ ATENÇÃO! ϟ", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, erro.getMessage(), "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "POSIÇÃO JÁ FOI SELECIONADA!", "ϟ ATENÇÃO! ϟ", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "POSIÇÃO JÁ FOI SELECIONADA!", "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
             }
         }
 
@@ -162,8 +174,8 @@ public class Mapa {
             if (editarFormacao.getLocalizacaoDaEmbarcacao().isEmpty()) {
 
                 editarFormacao.setIndexReferenciaLinha(obterReferenciaLinha(celula.getText().charAt(0)));
-                editarFormacao.setIndexPrimeiraCelulaSelecionada(matriz.get(editarFormacao.getIndexReferenciaLinha()).indexOf(celula));
-                editarFormacao.setIndexUltimaCelulaSelecionada(matriz.get(editarFormacao.getIndexReferenciaLinha()).indexOf(celula));
+                editarFormacao.setIndexPrimeiraCelulaSelecionada(matrizButton.get(editarFormacao.getIndexReferenciaLinha()).indexOf(celula));
+                editarFormacao.setIndexUltimaCelulaSelecionada(matrizButton.get(editarFormacao.getIndexReferenciaLinha()).indexOf(celula));
 
                 editarFormacao.setLocalizacaoDaEmbarcacao(celula.getText());
 
@@ -171,7 +183,7 @@ public class Mapa {
                 // -- Verificar Orientação Vertical --
                 if (obterReferenciaLinha(celula.getText().charAt(0)) == editarFormacao.getIndexReferenciaLinha() && editarFormacao.getOrientacaoEmbarcacaoHorizontal() == null) {
 
-                    int indexCelulaSelecionada = matriz.get(editarFormacao.getIndexReferenciaLinha()).indexOf(celula);
+                    int indexCelulaSelecionada = matrizButton.get(editarFormacao.getIndexReferenciaLinha()).indexOf(celula);
 
                     if ((editarFormacao.getIndexUltimaCelulaSelecionada() - 1) == indexCelulaSelecionada ||
                             (editarFormacao.getIndexUltimaCelulaSelecionada() + 1) == indexCelulaSelecionada ||
@@ -189,7 +201,7 @@ public class Mapa {
                     // -- Verificar Orientação Horizontal --
 
                     int indexReferenciaLinhaSelecionada = obterReferenciaLinha(celula.getText().charAt(0));
-                    int indexCelulaSelecionada = matriz.get(indexReferenciaLinhaSelecionada).indexOf(celula);
+                    int indexCelulaSelecionada = matrizButton.get(indexReferenciaLinhaSelecionada).indexOf(celula);
 
                     if (((editarFormacao.getIndexReferenciaLinha() - 1) == indexReferenciaLinhaSelecionada ||
                             (editarFormacao.getIndexReferenciaLinha() + 1) == indexReferenciaLinhaSelecionada ||

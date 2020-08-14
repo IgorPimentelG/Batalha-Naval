@@ -18,10 +18,12 @@ public class CreatorPDF {
     private Paragraph paragraph;
     private List<Historico> historicos;
     private String tipo;
+    private String nomeDoArquivo;
 
-    public CreatorPDF(List<Historico> historicos, String tipo) {
-        this.historicos = historicos;
-        this.tipo = tipo;
+    public CreatorPDF(List<Historico> historicos, String tipo, String nomeDoArquivo) {
+        this.historicos     = historicos;
+        this.tipo           = tipo;
+        this.nomeDoArquivo  = nomeDoArquivo;
     }
 
     public void creatPDF() throws Exception {
@@ -29,19 +31,20 @@ public class CreatorPDF {
         // Configuração PDF
         Rectangle pageSize = new Rectangle(PageSize.A4);
         pageSize.setBackgroundColor(new BaseColor(5, 17, 41));
+
         Document pdf = new Document(pageSize);
-        PdfWriter.getInstance(pdf, new FileOutputStream("relatorios/World_of_Warships_Relatório.pdf"));
+        PdfWriter.getInstance(pdf, new FileOutputStream("relatorios/" + nomeDoArquivo + ".pdf"));
+
         pdf.open();
 
-        
         // -- LOGO --
         Image logo = Image.getInstance("images/logo.png");
         logo.setAbsolutePosition(150, 580);
         pdf.add(logo);
 
         // -- FONTE --
-        Font fonteTitulo = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD, new BaseColor(BaseColor.WHITE.getRGB()));
-        Font fonteTexto = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL, new BaseColor(BaseColor.WHITE.getRGB()));
+        Font fonteTitulo  = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD, new BaseColor(BaseColor.WHITE.getRGB()));
+        Font fonteTexto   = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL, new BaseColor(BaseColor.WHITE.getRGB()));
 
         paragraph = new Paragraph("\n\n\n\n\n\n\n\n\n\n\n\n\n");
         pdf.add(paragraph);
@@ -51,10 +54,13 @@ public class CreatorPDF {
         pdf.add(paragraph);
 
         for(int i = 0; i < historicos.size(); i++) {
-            paragraph = new Paragraph("\n\n -------------- [ " + (i + 1) + "ª ] -------------- \n", fonteTexto);
+            paragraph = new Paragraph("\n\n ------------------------------------------- [ " + (i + 1) + "ª ] ------------------------------------------- \n", fonteTexto);
             paragraph.setAlignment(1);
             pdf.add(paragraph);
-            paragraph = new Paragraph("Player Desafiado: ", fonteTexto);
+            paragraph = new Paragraph("Player Desafiado: " + historicos.get(i).getDesafiado(), fonteTexto);
+            paragraph.setAlignment(1);
+            pdf.add(paragraph);
+            paragraph = new Paragraph("Pontuação: " + historicos.get(i).getPontuacao(), fonteTexto);
             paragraph.setAlignment(1);
             pdf.add(paragraph);
             paragraph = new Paragraph("Formação Desafiante: " + historicos.get(i).getFormacaoDesafiante(), fonteTexto);
@@ -64,7 +70,6 @@ public class CreatorPDF {
             paragraph.setAlignment(1);
             pdf.add(paragraph);
         }
-
         pdf.close();
     }
 }

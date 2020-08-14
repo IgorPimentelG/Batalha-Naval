@@ -63,6 +63,7 @@ public class Partida {
     public void checkMove(JButton celula) {
 
         if(!celula.getText().isEmpty()) {
+
             boolean flag = false;
             String hit = "não";
 
@@ -79,17 +80,15 @@ public class Partida {
 
             if (flag) {
                 celula.setIcon(Imagens.FOGO);
-                JOptionPane.showMessageDialog(null, "VOCÊ ACERTOU UMA EMBARCAÇÃO!", "ϟ :) ϟ", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "VOCÊ ACERTOU UMA EMBARCAÇÃO!", ":)", JOptionPane.WARNING_MESSAGE);
             } else {
                 celula.setIcon(Imagens.AGUA);
-                JOptionPane.showMessageDialog(null, "VOCÊ ERROU!", "ϟ :( ϟ", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "VOCÊ ERROU!", ":(", JOptionPane.WARNING_MESSAGE);
             }
 
-
-
             if (pontuacaoDesafiante == 50) {
-                for (List<JButton> linha : telaPartida.getMapa().getMatriz()) {
 
+                for (List<JButton> linha : telaPartida.getMapa().getMatrizButton()) {
                     for (JButton posicao : linha) {
                         posicao.setEnabled(false);
                         posicao.setBackground(Color.BLACK);
@@ -103,26 +102,27 @@ public class Partida {
 
                 control.salvarHistorico(desafiante, historico);
                 new TelaResultado(desafiante.getNickname(), "VOCÊ GANHOU +10 PONTOS",desafiante);
-
             } else {
-
                 // -- COMPUTADOR --
                 boolean flagControleComputador = true;
                 boolean hitComputador = false;
+
                 String hitPC = "não";
 
                 while (flagControleComputador) {
 
                     // Sortear posição
-                    int linhaSorteadaComputador = new Random().nextInt(5);
+                    int linhaSorteadaComputador         = new Random().nextInt(5);
                     int posicaoCelulaSorteadaComputador = new Random().nextInt(5);
 
-                    if (!hitsComputador.contains(telaPartida.getMapa().getMatriz().get(linhaSorteadaComputador).get(posicaoCelulaSorteadaComputador).getText())) {
+                    String celulaSorteadaComputador = telaPartida.getMapa().getMatrizString().get(linhaSorteadaComputador).get(posicaoCelulaSorteadaComputador);
+
+                    if (!hitsComputador.contains(celulaSorteadaComputador)) {
 
                         flagControleComputador = false;
 
                         for(List<String> linhaDaFormacao : formacaoDesafiante) {
-                            if (linhaDaFormacao.contains(telaPartida.getMapa().getMatriz().get(linhaSorteadaComputador).get(posicaoCelulaSorteadaComputador).getText())) {
+                            if (linhaDaFormacao.contains(celulaSorteadaComputador)) {
                                 pontuacaoDesafiado += 5;
                                 hitComputador = true;
                                 break;
@@ -130,45 +130,44 @@ public class Partida {
                         }
 
                         if(hitComputador) {
-                            JOptionPane.showMessageDialog(null, "O OPONENTE ACERTOU UMA EMBARCAÇÃO!", "ϟ :( ϟ", JOptionPane.WARNING_MESSAGE);
+                            JOptionPane.showMessageDialog(null, "O OPONENTE ACERTOU UMA EMBARCAÇÃO!", ":(", JOptionPane.WARNING_MESSAGE);
                             hitPC = "sim";
                         } else {
-                            JOptionPane.showMessageDialog(null, "O OPONENTE ERROU!", "ϟ :) ϟ", JOptionPane.WARNING_MESSAGE);
+                            JOptionPane.showMessageDialog(null, "O OPONENTE ERROU!", ":)", JOptionPane.WARNING_MESSAGE);
                         }
-                        hitsComputador.add(telaPartida.getMapa().getMatriz().get(linhaSorteadaComputador).get(posicaoCelulaSorteadaComputador).getText());
-                    }
 
-                    if(desafiado == null) {
-                        historico.addPlays("Player: COMPUTADOR" + " | Move: [" + telaPartida.getMapa().getMatriz().get(linhaSorteadaComputador).get(posicaoCelulaSorteadaComputador).getText()
-                                + "] | Hit: " + hitPC);
-                    } else {
-                        historico.addPlays("Player: " + desafiado.getNickname() + " | Move: [" + telaPartida.getMapa().getMatriz().get(linhaSorteadaComputador).get(posicaoCelulaSorteadaComputador).getText()
-                                + "] | Hit: " + hitPC);
-                    }
+                        hitsComputador.add(celulaSorteadaComputador);
 
-                    if (pontuacaoDesafiado == 50) {
-                        telaPartida.dispose();
-
-                        String vencedor = "";
-
-                        if(desafiado != null) {
-                            vencedor = desafiado.getNickname();
-                            control.salvarPontuacaoGanha(desafiado, 2);
-                            control.salvarPontuacaoPerda(desafiante, 5);
+                        if(desafiado == null) {
+                            historico.addPlays("Player: COMPUTADOR" + " | Move: [" + celulaSorteadaComputador + "] | Hit: " + hitPC);
                         } else {
-                            vencedor = "COMPUTADOR";
-                            control.salvarPontuacaoPerda(desafiante, 5);
+                            historico.addPlays("Player: " + desafiado.getNickname() + " | Move: [" + celulaSorteadaComputador + "] | Hit: " + hitPC);
                         }
 
-                        historico.setVencedor(vencedor);
-                        historico.setPontuacao(-5);
-                        control.salvarHistorico(desafiante, historico);
-                        new TelaResultado(vencedor, "VOCÊ PERDEU -5 PONTOS", desafiante);
+                        if (pontuacaoDesafiado == 50) {
+                            telaPartida.dispose();
+
+                            String vencedor = "";
+
+                            if(desafiado != null) {
+                                vencedor = desafiado.getNickname();
+                                control.salvarPontuacaoGanha(desafiado, 2);
+                                control.salvarPontuacaoPerda(desafiante, 5);
+                            } else {
+                                vencedor = "COMPUTADOR";
+                                control.salvarPontuacaoPerda(desafiante, 5);
+                            }
+
+                            historico.setVencedor(vencedor);
+                            historico.setPontuacao(-5);
+                            control.salvarHistorico(desafiante, historico);
+                            new TelaResultado(vencedor, "VOCÊ PERDEU -5 PONTOS", desafiante);
+                        }
                     }
                 }
             }
         } else {
-            JOptionPane.showMessageDialog(null, "POSIÇÃO JÁ FOI SELECIONADA", "ϟ ATENÇÃO! ϟ", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "POSIÇÃO JÁ FOI SELECIONADA", "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
         }
     }
 

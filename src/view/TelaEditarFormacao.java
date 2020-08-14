@@ -122,7 +122,7 @@ public class TelaEditarFormacao extends ScreenSetup {
     }
 
     private void configurarMapa() {
-        for(List<JButton> linha : mapa.getMatriz()) {
+        for(List<JButton> linha : mapa.getMatrizButton()) {
             List<JButton> celulas = linha;
 
             for(JButton celula : celulas) {

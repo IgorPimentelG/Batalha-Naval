@@ -10,17 +10,16 @@ public class Computador {
 
     // -- Atributos --
     private List<List<String>> formacao= new ArrayList<List<String>>();
-    private List<List<String>> matriz = new ArrayList<List<String>>();
+    private List<List<String>> matriz;
 
     // -- Construtor --
     public Computador() {
+        matriz = new Mapa().getMatrizString();
         setFormacao();
     }
 
     // -- Métodos --
     private void setFormacao() {
-
-        gerarMatriz();
 
         int embarcacao2PartesDisponiveis = 2;
         int embarcacao3PartesDisponiveis = 2;
@@ -104,43 +103,6 @@ public class Computador {
             if(embarcacao2PartesDisponiveis == 0) {
                 flagEmbarcacao3Partes = true;
             }
-        }
-    }
-
-    private void gerarMatriz() {
-        int contador = 1;
-        String posicao = "";
-
-        for(int i = 1; i < 6; i++) {
-
-            List<String> linha = new ArrayList<String>();
-
-            for(int j = 1; j < 6; j++) {
-
-                switch(contador) {
-                    case 1:
-                        posicao = "A" + j;
-                        break;
-                    case 2:
-                        posicao = "B" + j;
-                        break;
-                    case 3:
-                        posicao = "C" + j;
-                        break;
-                    case 4:
-                        posicao = "D" + j;
-                        break;
-                    case 5:
-                        posicao = "E" + j;
-                        break;
-                }
-
-                if(j == 5) {
-                    contador++;
-                }
-                linha.add(posicao);
-            }
-            matriz.add(linha);
         }
     }
 

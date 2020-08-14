@@ -1,13 +1,12 @@
 package main;
 
-import recursos.pdf.CreatorPDF;
 import view.TelaLogin;
 import view.TelaSpash;
 
 import javax.swing.*;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         TelaSpash telaSpash = new TelaSpash();
 
