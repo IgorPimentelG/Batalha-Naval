@@ -95,11 +95,14 @@ public class TelaEnviarConvite extends ScreenSetup {
                 PlayerControl control = new Persistencia().recuperarController();
                 Player desafiado = control.pesquisarNickName(inputBuscarJogador.getText());
 
+                
                 if(desafiado == null) {
-                    JOptionPane.showMessageDialog(null, "PLAYER NÃO ENCONTRADO! TENTE NOVAMENTE.", "≋ - ATENÇÃO! - ≋", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "PLAYER NÃO ENCONTRADO! TENTE NOVAMENTE.", "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
+                } else if(desafiado.getNickname().equals(inputBuscarJogador.getText())) {
+                    JOptionPane.showMessageDialog(null, "VOCÊ NÃO PODE DESAFIAR VOCÊ MESMO.", "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
                 } else {
                     dispose();
-                    JOptionPane.showMessageDialog(null, "A PARTIDA IRÁ COMEÇAR EM BREVE...", "≋ - BATALHE! - ≋", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "A PARTIDA IRÁ COMEÇAR EM BREVE...", "≋ BATALHE! ≋", JOptionPane.WARNING_MESSAGE);
                     new TelaPartida(player, desafiado);
                 }
 

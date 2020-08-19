@@ -9,10 +9,12 @@ import exceptions.*;
 import model.Historico;
 import model.Player;
 import persistencia.Persistencia;
+import recursos.email.EnviarEmail;
 
 public class PlayerControl {
 
-    private List<Player> usuariosCadastrados = new ArrayList<Player>();
+    private List<Player> usuariosCadastrados  = new ArrayList<Player>();
+    private List<Player> contasExcluidas      = new ArrayList<Player>();
 
     public Player cadastrarUsuario(String nickname, String email, String password) throws Exception, EmailInvalidoException {
         Player player = new Player(nickname, email, password);
@@ -102,6 +104,31 @@ public class PlayerControl {
         Player playerCadastrado = pesquisarPlayer(player);
         playerCadastrado.addHistorico(historico);
         salvar();
+    }
+
+    public void salvarHistoricoPlayerVsPlayer(Player desafiante, Player desafiado, Historico historico) {
+        Player desafianteCadastrado = pesquisarPlayer(desafiante);
+        Player desafiadoCadastrado  = pesquisarPlayer(desafiado);
+
+        desafianteCadastrado.addHistorico(historico);
+        desafiadoCadastrado.addHistorico(historico);
+
+        salvar();
+    }
+
+    public void excluirConta(Player player) throws Exception {
+        Player playerCadastro = pesquisarPlayer(player);
+
+        contasExcluidas.add(playerCadastro);
+        usuariosCadastrados.remove(playerCadastro);
+
+        enviarDadosContaExcluida(playerCadastro);
+
+        salvar();
+    }
+
+    private void enviarDadosContaExcluida(Player player) throws Exception {
+        new EnviarEmail(player.getEmail()).dadosConta(player);
     }
 
     private void salvar() {

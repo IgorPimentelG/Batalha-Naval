@@ -3,10 +3,13 @@ package view;
 // -- APIs --
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Arrays;
 import javax.swing.*;
 
 // -- Pacotes --
+import controller.PlayerControl;
 import model.*;
+import persistencia.Persistencia;
 import recursos.Imagens;
 import recursos.view.*;
 
@@ -57,6 +60,7 @@ public class TelaMenu extends ScreenSetup {
         JButton btnPlayerVsComputador = new ModButton("PLAYER VS COMPUTADOR", 130, 175, 300, 45);
         btnPlayerVsComputador.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "A PARTIDA IRÁ COMEÇAR EM BREVE...", "≋ BATALHE! ≋", JOptionPane.WARNING_MESSAGE);
                 new TelaPartida(player);
                 dispose();
             }
@@ -83,6 +87,21 @@ public class TelaMenu extends ScreenSetup {
         add(btnHistico,0);
 
         JButton btnExcluirConta = new ModButton("EXCLUIR CONTA", 130, 370, 300, 45);
+        btnExcluirConta.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                PlayerControl playerControl = new Persistencia().recuperarController();
+
+                try {
+                    playerControl.excluirConta(player);
+                    JOptionPane.showMessageDialog(null, "SUA CONTA FOI EXCLUÍDA COM SUCESSO!", "≋ ATÉ LOGO! ≋", JOptionPane.WARNING_MESSAGE);
+                    dispose();
+                    new TelaLogin();
+                } catch (Exception exception) {
+                    System.out.println(Arrays.toString(exception.getStackTrace()));
+                    JOptionPane.showMessageDialog(null, "NÃO FOI POSSÍVEL EXCLUÍR SUA CONTA. TENTE NOVAMENTE.", "≋ OPERAÇÃO INVÁLIDA! ≋", JOptionPane.WARNING_MESSAGE);
+                }
+            }
+        });
         add(btnExcluirConta, 0);
     }
 

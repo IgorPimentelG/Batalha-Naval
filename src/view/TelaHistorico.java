@@ -10,8 +10,10 @@ import javax.swing.text.*;
 
 // -- Pacotes --
 import controller.HistoricoControl;
+import controller.PlayerControl;
 import jdk.nashorn.internal.scripts.JO;
 import model.*;
+import persistencia.Persistencia;
 import recursos.*;
 import recursos.view.*;
 
@@ -26,9 +28,12 @@ public class TelaHistorico extends ScreenSetup {
     public TelaHistorico(Player player) {
         super("World of Warships - Histórico", 585, 505, Imagens.BACKGROUND_GAME);
 
-        this.player = player;
+        PlayerControl playerControl = new Persistencia().recuperarController();
+
+        this.player = playerControl.pesquisarPlayer(player);
         this.telaHistorico = this;
-        historicos  = player.getHistorico();
+
+        historicos  = this.player.getHistorico();
 
         // -- Adicionar Componentes a View --
         adicionarCard();
@@ -71,16 +76,20 @@ public class TelaHistorico extends ScreenSetup {
             public void actionPerformed(ActionEvent evt) {
                 Historico historicoDetalhado = null;
 
-                String dataDoHistorico = historicos.get(tabelaHistorico.getSelectedRow()).getDataDaPartida();
+                if(tabelaHistorico.getSelectedRow() == -1) {
+                    JOptionPane.showMessageDialog(null, "NENHUAM PARTIDA FOI SELECIONADA!", "≋ ATENÇÃO! ≋", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    String dataDoHistorico = historicos.get(tabelaHistorico.getSelectedRow()).getDataDaPartida();
 
-                for(Historico historicoSalvo : historicos) {
-                    if(historicoSalvo.getDataDaPartida().equals(dataDoHistorico)) {
-                        historicoDetalhado = historicoSalvo;
-                        break;
+                    for(Historico historicoSalvo : historicos) {
+                        if(historicoSalvo.getDataDaPartida().equals(dataDoHistorico)) {
+                            historicoDetalhado = historicoSalvo;
+                            break;
+                        }
                     }
+                    setVisible(false);
+                    new TelaDetalhar(historicoDetalhado, telaHistorico);
                 }
-                setVisible(false);
-                new TelaDetalhar(historicoDetalhado, telaHistorico);
             }
         });
         add(btnDetalhar, 0);
@@ -139,7 +148,7 @@ public class TelaHistorico extends ScreenSetup {
         private TelaHistorico telaHistorico;
 
         private TelaGerarRelatorio(TelaHistorico telaHistorico) {
-            super("Relatório", 255, 255, Imagens.BACKGROUN_MENU);
+            super("≋ Relatório ≋", 255, 255, Imagens.BACKGROUN_MENU);
 
             this.telaHistorico = telaHistorico;
 
@@ -163,7 +172,7 @@ public class TelaHistorico extends ScreenSetup {
             btnRelatorioPartidasGanhas.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     try {
-                        new HistoricoControl().gerarRelatorioPartidasGanhas(historicos, player);
+                        new HistoricoControl().gerarRelatorioPartidasGanhas(player);
                         JOptionPane.showMessageDialog(null, "RELATÓRIO GERADO COM SUCESSO!", "≋ RELATÓRIO ≋", JOptionPane.INFORMATION_MESSAGE);
                     } catch(Exception erro) {
                         JOptionPane.showMessageDialog(null, "ACONTECEU UM ERRO AO GERAR O RELATÓRIO!", "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
@@ -177,8 +186,7 @@ public class TelaHistorico extends ScreenSetup {
             btnRelatorioPartidasPerdidas.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     try {
-
-                        new HistoricoControl().gerarRelatorioPartidasPerdidas(historicos, player);
+                        new HistoricoControl().gerarRelatorioPartidasPerdidas(player);
                         JOptionPane.showMessageDialog(null, "RELATÓRIO GERADO COM SUCESSO!", "≋ RELATÓRIO ≋", JOptionPane.INFORMATION_MESSAGE);
                     } catch (Exception erro) {
                         JOptionPane.showMessageDialog(null, "ACONTECEU UM ERRO AO GERAR O RELATÓRIO!", "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);

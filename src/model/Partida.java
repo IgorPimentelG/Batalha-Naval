@@ -97,6 +97,9 @@ public class Partida {
                     control.salvarPontuacaoGanha(desafiante, 10);
                     historico.setVencedor(desafiante.getNickname());
                     historico.setPontuacao(10);
+
+                    salvarHistorico();
+
                     telaPartida.dispose();
                 }
 
@@ -104,8 +107,8 @@ public class Partida {
                 new TelaResultado(desafiante.getNickname(), "VOCÊ GANHOU +10 PONTOS",desafiante);
             } else {
                 // -- COMPUTADOR --
-                boolean flagControleComputador = true;
-                boolean hitComputador = false;
+                boolean flagControleComputador  = true;
+                boolean hitComputador           = false;
 
                 String hitPC = "não";
 
@@ -160,7 +163,9 @@ public class Partida {
 
                             historico.setVencedor(vencedor);
                             historico.setPontuacao(-5);
-                            control.salvarHistorico(desafiante, historico);
+
+                            salvarHistorico();
+
                             new TelaResultado(vencedor, "VOCÊ PERDEU -5 PONTOS", desafiante);
                         }
                     }
@@ -168,6 +173,14 @@ public class Partida {
             }
         } else {
             JOptionPane.showMessageDialog(null, "POSIÇÃO JÁ FOI SELECIONADA", "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void salvarHistorico() {
+        if(desafiado != null) {
+            control.salvarHistoricoPlayerVsPlayer(desafiante, desafiado, historico);
+        } else {
+            control.salvarHistorico(desafiante, historico);
         }
     }
 

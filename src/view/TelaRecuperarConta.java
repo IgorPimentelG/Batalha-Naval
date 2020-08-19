@@ -7,9 +7,9 @@ import javax.mail.MessagingException;
 import javax.swing.*;
 
 // -- Pacotes --
-import recursos.email.RecuperarConta;
 import exceptions.DadosInvalidosException;
 import recursos.*;
+import recursos.email.EnviarEmail;
 import recursos.view.*;
 
 public class TelaRecuperarConta extends ScreenSetup {
@@ -62,10 +62,8 @@ public class TelaRecuperarConta extends ScreenSetup {
         btnConfirmar.setBackground(new Color(102, 255, 153));
         btnConfirmar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                RecuperarConta recuperarConta = new RecuperarConta();
-
                 try {
-                    recuperarConta.enviarEmail(inputEmail.getText());
+                    new EnviarEmail(inputEmail.getText()).recuperacaoConta();
 
                     JOptionPane.showMessageDialog(null,
                             "SENHA ALTERADA COM SUCESSO! VERIFIQUE SEU E-MAIL.",
