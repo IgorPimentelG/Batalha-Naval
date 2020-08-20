@@ -9,6 +9,7 @@ import java.util.Random;
 
 // -- Pacotes --
 import controller.PlayerControl;
+import jdk.nashorn.internal.scripts.JO;
 import persistencia.Persistencia;
 import recursos.Imagens;
 import view.*;
@@ -98,12 +99,10 @@ public class Partida {
                     historico.setVencedor(desafiante.getNickname());
                     historico.setPontuacao(10);
 
-                    salvarHistorico();
-
                     telaPartida.dispose();
                 }
 
-                control.salvarHistorico(desafiante, historico);
+                salvarHistorico();
                 new TelaResultado(desafiante.getNickname(), "VOCÊ GANHOU +10 PONTOS",desafiante);
             } else {
                 // -- COMPUTADOR --
@@ -174,6 +173,29 @@ public class Partida {
         } else {
             JOptionPane.showMessageDialog(null, "POSIÇÃO JÁ FOI SELECIONADA", "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    public boolean checkFormacaoDesafiado() {
+
+        boolean formacaoValida = true;
+
+        List<Historico> historicoDesafiante = desafiante.getHistorico();
+        List<Historico> partidasComDesafiado = new ArrayList<Historico>();
+
+
+        for(Historico historico : historicoDesafiante) {
+            if(historico.getDesafiado().equals(desafiado.getNickname())) {
+                partidasComDesafiado.add(historico);
+            }
+        }
+
+        partidasComDesafiado.get(partidasComDesafiado.size() - 1).getFormacaoDesafiado().removeAll(formacaoDesafiado);
+
+        if(partidasComDesafiado.get(partidasComDesafiado.size() - 1).getFormacaoDesafiado().size() == 0) {
+            formacaoValida = false;
+        }
+
+        return formacaoValida;
     }
 
     private void salvarHistorico() {

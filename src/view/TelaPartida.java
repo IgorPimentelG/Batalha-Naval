@@ -39,6 +39,19 @@ public class TelaPartida extends ScreenSetup {
         partida = new Partida(desafiante, desafiado, this);
 
         configuracaoScreen();
+
+        if(!partida.checkFormacaoDesafiado()) {
+            dispose();
+            JOptionPane.showMessageDialog(null, "<html><center>NÃO É POSSÍVEL INICIAR A PARTIDA.<br>" +
+                            "O DESAFIADO AINDA NÃO MUDOU A SUA FORMAÇÃO PADRÃO" +
+                            "<br>APÓS SUA ÚLTIMA BATALHA COM ELE.</center></html>",
+                    "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
+            new TelaMenu(desafiante);
+        } else {
+            JOptionPane.showMessageDialog(null, "A PARTIDA IRÁ COMEÇAR EM BREVE...", "≋ BATALHE! ≋", JOptionPane.WARNING_MESSAGE);
+        }
+
+
     }
 
     private void configuracaoScreen() {
