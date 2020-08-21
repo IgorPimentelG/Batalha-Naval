@@ -1,7 +1,6 @@
 package view;
 
 // APIs
-import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import java.util.List;
@@ -57,25 +56,20 @@ public class TelaEditarFormacao extends ScreenSetup {
     private void adicionarCard() {
         Card card = new Card();
 
-        JLabel cardViewSuperior = new JLabel(card.gerarCardSuperior(380,60));
-        cardViewSuperior.setBounds(100, 30, 380, 60);
+        JLabel cardViewSuperior = card.getCardSuperior(100, 30,380,60);
         add(cardViewSuperior, 0);
 
         // Logo
-        JLabel lblLogoEsquerdo = new JLabel(Imagens.LOGO_SUPERIOR);
-        lblLogoEsquerdo.setBounds(25, 15, 100, 100);
+        JLabel lblLogoEsquerdo = card.getIconeLateral(25, 15);
         add(lblLogoEsquerdo, 0);
 
-        JLabel lblLogoDireito = new JLabel(Imagens.LOGO_SUPERIOR);
-        lblLogoDireito.setBounds(460, 15, 100, 100);
+        JLabel lblLogoDireito = card.getIconeLateral(460, 15);
         add(lblLogoDireito, 0);
     }
 
     private void adicionarLabel() {
-        JLabel lblTitulo = new JLabel("FORMAÇÃO PADRÃO");
-        lblTitulo.setBounds(100, 50, 380, 20);
+        JLabel lblTitulo = new ModRotulo("FORMAÇÃO PADRÃO", 100, 50, 380, 20);
         lblTitulo.setHorizontalAlignment(JLabel.CENTER);
-        lblTitulo.setForeground(Color.WHITE);
         add(lblTitulo, 0);
     }
 

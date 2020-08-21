@@ -32,16 +32,13 @@ public class TelaRecuperarConta extends ScreenSetup {
     private void adicionarCard() {
         Card card = new Card();
 
-        JLabel cardSuperior = new JLabel(card.gerarCardSuperior(355, 60));
-        cardSuperior.setBounds(125, 90, 355, 60);
+        JLabel cardSuperior = card.getCardSuperior(125, 90, 355, 60);
         add(cardSuperior, 0);
 
-        JLabel cardInferior = new JLabel(card.gerarCardInferior(355, 185));
-        cardInferior.setBounds(125, 150, 355, 185);
+        JLabel cardInferior = card.getCardInferior(125, 150, 355, 185);
         add(cardInferior, 0);
 
-        JLabel lblLogo = new JLabel(Imagens.LOGO_SUPERIOR);
-        lblLogo.setBounds(252, 40, 100, 100);
+        JLabel lblLogo = card.getIcone(125, 40, 355);
         add(lblLogo, 0);
     }
 

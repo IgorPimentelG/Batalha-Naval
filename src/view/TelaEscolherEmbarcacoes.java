@@ -39,16 +39,13 @@ public class TelaEscolherEmbarcacoes extends ScreenSetup {
     private void adicionarCard() {
         Card card = new Card();
 
-        JLabel cardSuperiorTitulo = new JLabel(card.gerarCardSuperior(225, 50));
-        cardSuperiorTitulo.setBounds(35, 25, 225, 50);
+        JLabel cardSuperiorTitulo = card.getCardSuperior(35, 25,225, 50);
         add(cardSuperiorTitulo, 0);
 
-        JLabel cardSuperiorBarco1P = new JLabel(card.gerarCardSuperior(100, 60));
-        cardSuperiorBarco1P.setBounds(35, 210, 100, 50);
+        JLabel cardSuperiorBarco1P = card.getCardSuperior(35, 210, 100, 60);
         add(cardSuperiorBarco1P, 0);
 
-        JLabel cardSuperiorBarco2P = new JLabel(card.gerarCardSuperior(100, 60));
-        cardSuperiorBarco2P.setBounds(158, 210, 100, 50);
+        JLabel cardSuperiorBarco2P = card.getCardSuperior(158, 210, 100,60);
         add(cardSuperiorBarco2P, 0);
     }
 

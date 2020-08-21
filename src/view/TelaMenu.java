@@ -1,7 +1,6 @@
 package view;
 
 // -- APIs --
-import java.awt.*;
 import java.awt.event.*;
 import java.util.Arrays;
 import javax.swing.*;
@@ -18,7 +17,7 @@ public class TelaMenu extends ScreenSetup {
     private Player player;
 
     public TelaMenu(Player player) {
-        super("World of Warships - Menu", 550, 480, Imagens.BACKGROUN_MENU);
+        super("World of Warships - Menu", 550, 470, Imagens.BACKGROUN_MENU);
 
         this.player = player;
 
@@ -34,16 +33,13 @@ public class TelaMenu extends ScreenSetup {
     private void adicionarCard() {
         Card card = new Card();
 
-        JLabel cardSuperior = new JLabel(card.gerarCardSuperior(350, 60));
-        cardSuperior.setBounds(100, 30, 350, 60);
+        JLabel cardSuperior = card.getCardSuperior(100, 30, 350, 60);
         add(cardSuperior, 0);
 
-        JLabel lblLogoEsquerdo = new JLabel(Imagens.LOGO_SUPERIOR);
-        lblLogoEsquerdo.setBounds(25, 15, 100, 100);
+        JLabel lblLogoEsquerdo = card.getIconeLateral(25, 15);
         add(lblLogoEsquerdo, 0);
 
-        JLabel lblLogoDireito = new JLabel(Imagens.LOGO_SUPERIOR);
-        lblLogoDireito.setBounds(430, 15, 100, 100);
+        JLabel lblLogoDireito = card.getIconeLateral(430, 15);
         add(lblLogoDireito, 0);
     }
 
@@ -106,12 +102,8 @@ public class TelaMenu extends ScreenSetup {
     }
 
     private void adicionarLabels() {
-        JLabel lblTitulo = new JLabel("MENU");
-        lblTitulo.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
-        lblTitulo.setBounds(250, 50, 100, 20);
-        lblTitulo.setForeground(Color.WHITE);
+        JLabel lblTitulo = new ModRotulo("MENU", 250, 50, 100, 20);
         add(lblTitulo, 0);
     }
-
 }
 

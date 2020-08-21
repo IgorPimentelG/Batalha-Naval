@@ -9,9 +9,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.text.*;
 
 // -- Pacotes --
-import controller.HistoricoControl;
-import controller.PlayerControl;
-import jdk.nashorn.internal.scripts.JO;
+import controller.*;
 import model.*;
 import persistencia.Persistencia;
 import recursos.*;
@@ -48,8 +46,7 @@ public class TelaHistorico extends ScreenSetup {
     private void adicionarCard() {
         Card card = new Card();
 
-        JLabel cardSuperiorHistorico = new JLabel(card.gerarCardSuperior(310, 60));
-        cardSuperiorHistorico.setBounds(135, 50, 310, 60);
+        JLabel cardSuperiorHistorico = card.getCardSuperior(135, 50, 310, 60);
         add(cardSuperiorHistorico, 0);
 
         JLabel logoCardHistoricoEsquerdo = new JLabel(Imagens.LOGO_SUPERIOR);
@@ -62,11 +59,8 @@ public class TelaHistorico extends ScreenSetup {
     }
 
     private void adicionarLabels() {
-        JLabel lblHistico = new JLabel("HISTÓRICO");
-        lblHistico.setBounds(135, 70, 310, 20);
+        JLabel lblHistico = new ModRotulo("HISTÓRICO", 135, 70, 310, 20);
         lblHistico.setHorizontalAlignment(JLabel.CENTER);
-        lblHistico.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 14));
-        lblHistico.setForeground(Color.WHITE);
         add(lblHistico, 0);
     }
 
@@ -265,17 +259,13 @@ public class TelaHistorico extends ScreenSetup {
         private void adicionarCard() {
             Card card = new Card();
 
-            JLabel cardSuperior = new JLabel(card.gerarCardSuperior(350, 50));
-            cardSuperior.setBounds(50, 80, 350, 50);
+            JLabel cardSuperior = card.getCardSuperior(50, 80,350, 50);
             add(cardSuperior, 0);
 
-            JLabel cardInferior = new JLabel(card.gerarCardInferior(350, 300));
-            cardInferior.setBounds(50, 130, 350, 300);
+            JLabel cardInferior = card.getCardInferior(50, 130, 350, 300);
             add(cardInferior, 0);
 
-            JLabel lblLogo = new JLabel(Imagens.LOGO_SUPERIOR);
-            lblLogo.setBounds(50, 20, 350, 100);
-            lblLogo.setHorizontalAlignment(JLabel.CENTER);
+            JLabel lblLogo = card.getIcone(50, 20, 350);
             add(lblLogo, 0);
         }
 

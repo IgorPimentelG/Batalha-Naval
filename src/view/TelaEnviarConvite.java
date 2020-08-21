@@ -11,7 +11,6 @@ import javax.swing.table.*;
 
 // -- Pacotes --
 import controller.PlayerControl;
-import model.Partida;
 import model.Player;
 import persistencia.Persistencia;
 import recursos.*;
@@ -40,40 +39,31 @@ public class TelaEnviarConvite extends ScreenSetup {
     private void adicionarCard()  {
         Card card = new Card();
 
-        JLabel cardSuperiorConvite = new JLabel(card.gerarCardSuperior(300, 60));
-        cardSuperiorConvite.setBounds(60, 170, 300, 60);
+        JLabel cardSuperiorConvite =card.getCardSuperior(60, 170, 300, 60);
         add(cardSuperiorConvite, 0);
 
-        JLabel cardInferiorConvite = new JLabel(card.gerarCardInferior(300, 210));
-        cardInferiorConvite.setBounds(60, 230, 300, 210);
+        JLabel cardInferiorConvite = card.getCardInferior(60, 230, 300, 210);
         add(cardInferiorConvite, 0);
 
-        JLabel logoConvite = new JLabel(Imagens.LOGO_SUPERIOR);
-        logoConvite.setBounds(160, 120, 100, 100);
+        JLabel logoConvite = card.getIcone(60, 120, 300);
         add(logoConvite, 0);
 
         // --- Ranking ---
-        JLabel cardSuperiorRanking = new JLabel(card.gerarCardSuperior(350, 60));
-        cardSuperiorRanking.setBounds(430, 110, 350, 60);
+        JLabel cardSuperiorRanking = card.getCardSuperior(430, 110, 350, 60);
         add(cardSuperiorRanking, 0);
 
-        JLabel logoRankingEsquerdo = new JLabel(Imagens.LOGO_SUPERIOR);
-        logoRankingEsquerdo.setBounds(555, 35, 100, 100);
+        JLabel logoRankingEsquerdo = card.getIconeLateral(555, 35);
         add(logoRankingEsquerdo, 0);
     }
 
     private void adicionarLabels() {
-        JLabel lblEnviarConvite = new JLabel("ENVIAR CONVITE");
-        lblEnviarConvite.setBounds(60, 245, 300, 20);
+        JLabel lblEnviarConvite = new ModRotulo("ENVIAR CONVITE", 60, 245, 300, 20);
         lblEnviarConvite.setHorizontalAlignment(JLabel.CENTER);
-        lblEnviarConvite.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 18));
         add(lblEnviarConvite, 0);
 
-        JLabel lblRanking = new JLabel("R A N K I N G");
+        JLabel lblRanking = new ModRotulo("R A N K I N G", 430, 135, 350, 20);
         lblRanking.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 14));
-        lblRanking.setBounds(430, 135, 350, 20);
         lblRanking.setHorizontalAlignment(JLabel.CENTER);
-        lblRanking.setForeground(Color.WHITE);
         add(lblRanking, 0);
 
         JLabel lblNickname = new JLabel("Nickname:");

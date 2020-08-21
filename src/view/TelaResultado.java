@@ -33,41 +33,34 @@ public class TelaResultado extends ScreenSetup {
     private void adicionarCard() {
         Card card = new Card();
 
-        JLabel cardSuperior = new JLabel(card.gerarCardSuperior(350, 50));
-        cardSuperior.setBounds(90, 70, 350, 50);
+        JLabel cardSuperior = card.getCardSuperior(90, 70,350, 50);
         add(cardSuperior, 0);
 
-        JLabel cardInferior = new JLabel(card.gerarCardInferior(350, 150));
-        cardInferior.setBounds(90, 120, 350, 150);
+        JLabel cardInferior = card.getCardInferior(90, 120, 350, 150);
         add(cardInferior, 0);
 
-        JLabel lblLogo = new JLabel(Imagens.LOGO_SUPERIOR);
-        lblLogo.setBounds(215, 10, 100, 100);
+        JLabel lblLogo = card.getIcone(90, 10, 350);
         add(lblLogo, 0);
     }
 
     private void adicionarLabels(String vencedor, String pontuacao) {
-        JLabel lblTitulo = new JLabel("RESULTADO");
+        JLabel lblTitulo = new ModRotulo("RESULTADO", 0, 130, 533, 20);
         lblTitulo.setHorizontalAlignment(JLabel.CENTER);
-        lblTitulo.setBounds(0, 130, 533, 20);
         lblTitulo.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 14));
         add(lblTitulo, 0);
 
-        JLabel lblVencedor = new JLabel("VENCEDOR");
+        JLabel lblVencedor = new ModRotulo("VENCEDOR", 0, 155, 533, 20);
         lblVencedor.setHorizontalAlignment(JLabel.CENTER);
-        lblVencedor.setBounds(0, 155, 533, 20);
         add(lblVencedor, 0);
 
-        JLabel lblPlayer = new JLabel(vencedor);
+        JLabel lblPlayer = new ModRotulo(vencedor, 0, 173, 533, 14);
         lblPlayer.setHorizontalAlignment(JLabel.CENTER);
         lblPlayer.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 14));
-        lblPlayer.setBounds(0, 173, 533, 20);
         lblPlayer.setForeground(Color.GREEN);
         add(lblPlayer, 0);
 
-        JLabel lblPontuacao = new JLabel(pontuacao);
+        JLabel lblPontuacao = new ModRotulo(pontuacao, 0, 195, 533, 20);
         lblPontuacao.setHorizontalAlignment(JLabel.CENTER);
-        lblPontuacao.setBounds(0, 195, 533, 20);
         add(lblPontuacao, 0);
     }
 
@@ -90,5 +83,13 @@ public class TelaResultado extends ScreenSetup {
             }
         });
         add(btnContinuar, 0);
+    }
+
+    // -- Inner Class --
+    private class ModRotulo extends JLabel {
+        private ModRotulo(String texto, int x, int y, int width, int height) {
+            setText(texto);
+            setBounds(x, y, width, height);
+        }
     }
 }

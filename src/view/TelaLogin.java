@@ -18,7 +18,7 @@ public class TelaLogin extends ScreenSetup {
     private JPasswordField inputPassword;
 
     public TelaLogin() {
-        super("World of Warships - Sign In", 800, 565, Imagens.BACKGROUN_SIGN_IN);
+        super("World of Warships - Sign In", 800, 550, Imagens.BACKGROUN_SIGN_IN);
 
         // -- Adicionar Componentes a View --
         adicionarCard();
@@ -35,16 +35,13 @@ public class TelaLogin extends ScreenSetup {
     private void adicionarCard() {
         Card card = new Card();
 
-        JLabel cardSuperior = new JLabel(card.gerarCardSuperior(355, 60));
-        cardSuperior.setBounds(220, 90, 355, 60);
+        JLabel cardSuperior = card.getCardSuperior(220, 90,355, 60);
         add(cardSuperior, 0);
 
-        JLabel cardInferior = new JLabel(card.gerarCardInferior(355, 330));
-        cardInferior.setBounds(220, 150, 355, 330);
+        JLabel cardInferior = card.getCardInferior(220, 150, 355, 330);
         add(cardInferior, 0);
 
-        JLabel lblLogo = new JLabel(Imagens.LOGO_SUPERIOR);
-        lblLogo.setBounds(347, 40, 100, 100);
+        JLabel lblLogo = card.getIcone(220, 40, 355);
         add(lblLogo, 0);
     }
 

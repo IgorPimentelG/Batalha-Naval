@@ -18,7 +18,7 @@ public interface Imagens {
     public static final ImageIcon BACKGROUND_GAME 					= new ImageIcon("images/background_game.jpg");
     public static final ImageIcon BACKGROUND_CONVITE 				= new ImageIcon("images/background_convite.png");
     public static final ImageIcon BACKGROUND_EMBARCACOES 			= new ImageIcon("images/background_embarcacoes.png");
-    public static final ImageIcon BACKGROUND_SPASH                  = new ImageIcon("images/background_spash.jpg");
+    public static final ImageIcon BACKGROUND_SPASH                  = new ImageIcon("images/background_spash.png");
     public static final ImageIcon BACKGROUND_RESULTADO              = new ImageIcon("images/background_resultado.jpg");
     public static final ImageIcon BACKGROUND_DETALHAR               = new ImageIcon("images/background_detalhar.jpeg");
 

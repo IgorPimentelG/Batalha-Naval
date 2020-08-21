@@ -3,13 +3,11 @@ package model;
 // APIs
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
-import java.util.Random;
 
 // -- Pacotes --
 import controller.PlayerControl;
-import jdk.nashorn.internal.scripts.JO;
 import persistencia.Persistencia;
 import recursos.Imagens;
 import view.*;
@@ -207,42 +205,10 @@ public class Partida {
     }
 
     // -- Getters --
-    public Player getDesafiante() {
-        return desafiante;
-    }
-
-    public Player getDesafiado() {
-        return desafiante;
-    }
-
     public Computador getComputador() {
         return computador;
     }
-
-    public int getPontuacaoDesafiante() {
-        return pontuacaoDesafiante;
-    }
-
-    public int getPontuacaoDesafiado() {
-        return pontuacaoDesafiado;
-    }
-
-    public void setPontuacaoDesafiante(int pontuacaoDesafiante) {
-        this.pontuacaoDesafiante = pontuacaoDesafiante;
-    }
-
-    public void setPontuacaoDesafiado(int pontuacaoDesafiado) {
-        this.pontuacaoDesafiado = pontuacaoDesafiado;
-    }
-
-    public List<List<String>> getFormacaoDesafiante() {
-        return formacaoDesafiante;
-    }
-
-    public List<List<String>> getFormacaoDesafiado() {
-        return formacaoDesafiado;
-    }
-
+    
     private void salvarFormacaoHistorico() {
         historico.setFormacaoDesafiante(formacaoDesafiante);
         historico.setFormacaoDesafiado(formacaoDesafiado);
