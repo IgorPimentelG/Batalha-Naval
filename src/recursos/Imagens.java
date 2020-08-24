@@ -1,8 +1,6 @@
 package recursos;
 
 // -- APIs --
-import sun.swing.ImageIconUIResource;
-
 import javax.swing.ImageIcon;
 
 public interface Imagens {

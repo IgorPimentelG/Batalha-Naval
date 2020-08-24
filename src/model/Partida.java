@@ -68,7 +68,7 @@ public class Partida {
 
             for (List<String> linha : formacaoDesafiado) {
                 if (linha.contains(celula.getText())) {
-                    pontuacaoDesafiante += 5;
+                    pontuacaoDesafiante++;
                     hit = "sim";
                     flag = true;
                 }
@@ -85,24 +85,7 @@ public class Partida {
                 JOptionPane.showMessageDialog(null, "VOCÊ ERROU!", ":(", JOptionPane.WARNING_MESSAGE);
             }
 
-            if (pontuacaoDesafiante == 50) {
-
-                for (List<JButton> linha : telaPartida.getMapa().getMatrizButton()) {
-                    for (JButton posicao : linha) {
-                        posicao.setEnabled(false);
-                        posicao.setBackground(Color.BLACK);
-                    }
-
-                    control.salvarPontuacaoGanha(desafiante, 10);
-                    historico.setVencedor(desafiante.getNickname());
-                    historico.setPontuacao(10);
-
-                    telaPartida.dispose();
-                }
-
-                salvarHistorico();
-                new TelaResultado(desafiante.getNickname(), "VOCÊ GANHOU +10 PONTOS",desafiante);
-            } else {
+            if (!checkVencedor()) {
                 // -- COMPUTADOR --
                 boolean flagControleComputador  = true;
                 boolean hitComputador           = false;
@@ -123,7 +106,7 @@ public class Partida {
 
                         for(List<String> linhaDaFormacao : formacaoDesafiante) {
                             if (linhaDaFormacao.contains(celulaSorteadaComputador)) {
-                                pontuacaoDesafiado += 5;
+                                pontuacaoDesafiado++;
                                 hitComputador = true;
                                 break;
                             }
@@ -138,33 +121,7 @@ public class Partida {
 
                         hitsComputador.add(celulaSorteadaComputador);
 
-                        if(desafiado == null) {
-                            historico.addPlays("Player: COMPUTADOR" + " | Move: [" + celulaSorteadaComputador + "] | Hit: " + hitPC);
-                        } else {
-                            historico.addPlays("Player: " + desafiado.getNickname() + " | Move: [" + celulaSorteadaComputador + "] | Hit: " + hitPC);
-                        }
-
-                        if (pontuacaoDesafiado == 50) {
-                            telaPartida.dispose();
-
-                            String vencedor = "";
-
-                            if(desafiado != null) {
-                                vencedor = desafiado.getNickname();
-                                control.salvarPontuacaoGanha(desafiado, 2);
-                                control.salvarPontuacaoPerda(desafiante, 5);
-                            } else {
-                                vencedor = "COMPUTADOR";
-                                control.salvarPontuacaoPerda(desafiante, 5);
-                            }
-
-                            historico.setVencedor(vencedor);
-                            historico.setPontuacao(-5);
-
-                            salvarHistorico();
-
-                            new TelaResultado(vencedor, "VOCÊ PERDEU -5 PONTOS", desafiante);
-                        }
+                       checkVencedor();
                     }
                 }
             }
@@ -194,6 +151,46 @@ public class Partida {
         }
 
         return formacaoValida;
+    }
+
+    private boolean checkVencedor() {
+
+        boolean finalizarPartida = false;
+        String vencedor = "";
+        String pontuacao = "";
+
+        if(pontuacaoDesafiante == 10) {
+
+            finalizarPartida = true;
+            vencedor = desafiante.getNickname();
+            pontuacao = "VOCÊ GANHOU +10 PONTOS";
+
+            control.salvarPontuacaoGanha(desafiante, 10);
+            historico.setVencedor(desafiante.getNickname());
+            historico.setPontuacao(10);
+
+        } else if(pontuacaoDesafiado == 10) {
+            finalizarPartida = true;
+            pontuacao = "VOCÊ PERDEU -5 PONTOS";
+
+            if(desafiado != null) {
+                vencedor = desafiado.getNickname();
+                control.salvarPontuacaoGanha(desafiado, 2);
+            } else {
+                vencedor = "COMPUTADOR";
+            }
+
+            control.salvarPontuacaoPerda(desafiante, 5);
+            historico.setVencedor(vencedor);
+            historico.setPontuacao(-5);
+        }
+
+       if(finalizarPartida) {
+            salvarHistorico();
+            telaPartida.dispose();
+            new TelaResultado(vencedor, pontuacao, desafiante);
+       }
+        return finalizarPartida;
     }
 
     private void salvarHistorico() {

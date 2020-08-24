@@ -1,12 +1,10 @@
 package view;
 
-// -- APIs --
-import javax.swing.*;
-
 // -- Pacotes --
 import recursos.Imagens;
 import recursos.view.ScreenSetup;
 
+// -- APIs --
 import java.awt.*;
 
 public class TelaSpash extends ScreenSetup {
