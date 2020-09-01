@@ -22,7 +22,7 @@ public class TelaSpash extends ScreenSetup {
     }
     
     private void adicionarLabel() {
-    	JLabel lblSobre = new JLabel("Versão 0.9b");
+    	JLabel lblSobre = new JLabel("Versão 1.0");
     	lblSobre.setBounds(0, 235, 350, 80);
     	lblSobre.setHorizontalAlignment(JLabel.CENTER);
     	lblSobre.setForeground(Color.WHITE);

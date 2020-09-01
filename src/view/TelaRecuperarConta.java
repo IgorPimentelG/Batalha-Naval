@@ -64,7 +64,7 @@ public class TelaRecuperarConta extends ScreenSetup {
 
                     JOptionPane.showMessageDialog(null,
                             "SENHA ALTERADA COM SUCESSO! VERIFIQUE SEU E-MAIL.",
-                            "♔ SUCESSO! ♔", JOptionPane.WARNING_MESSAGE);
+                            "♔ SUCESSO!♔", JOptionPane.WARNING_MESSAGE);
 
                     dispose();
                     new TelaLogin();

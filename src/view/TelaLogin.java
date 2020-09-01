@@ -47,10 +47,8 @@ public class TelaLogin extends ScreenSetup {
 
     private void adicionarInputs() {
         inputEmail = new ModInput(240, 193, 315);
-        inputEmail.setText("igor.pimentel.msi@hotmail.com");
         add(inputEmail, 0);
 
-        inputPassword = new JPasswordField("12345678");
         inputPassword.setHorizontalAlignment(JPasswordField.CENTER);
         inputPassword.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 14));
         inputPassword.setBounds(240, 265, 315, 35);

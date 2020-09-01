@@ -1,6 +1,6 @@
 package view;
 
-// -- APIs --
+// # APIs #
 import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
@@ -33,7 +33,7 @@ public class TelaHistorico extends ScreenSetup {
 
         historicos  = this.player.getHistorico();
 
-        // -- Adicionar Componentes a View --
+        // # Adicionar Componentes a View #
         adicionarCard();
         adicionarLabels();
         adicionarButtons();
@@ -42,7 +42,7 @@ public class TelaHistorico extends ScreenSetup {
         setVisible(true);
     }
 
-    // -- Componentes #
+    // # Componentes #
     private void adicionarCard() {
         Card card = new Card();
 
@@ -142,7 +142,7 @@ public class TelaHistorico extends ScreenSetup {
         private TelaHistorico telaHistorico;
 
         private TelaGerarRelatorio(TelaHistorico telaHistorico) {
-            super("♔ RelatÃ³rio ♔", 255, 255, Imagens.BACKGROUN_MENU);
+            super("♔ Relatário♔", 255, 255, Imagens.BACKGROUN_MENU);
 
             this.telaHistorico = telaHistorico;
 

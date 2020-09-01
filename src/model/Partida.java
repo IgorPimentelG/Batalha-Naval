@@ -241,8 +241,6 @@ public class Partida {
     private boolean realizarJogadaComputador(String celula) {
     
         boolean jogadaRealizada = false;
-
-        System.out.println(celula);
         
         if (!hitsComputador.contains(celula)) {
             jogadaRealizada = true;
