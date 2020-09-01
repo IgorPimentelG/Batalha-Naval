@@ -21,7 +21,7 @@ public class TelaMenu extends ScreenSetup {
 
         this.player = player;
 
-        // # Adicionar Componentes a View #
+        // -- Adicionar Componentes a View --
         adicionarCard();
         adicionarButtons();
         adicionarLabels();
@@ -29,7 +29,7 @@ public class TelaMenu extends ScreenSetup {
         setVisible(true);
     }
 
-    // # Componentes #
+    // -- Componentes --
     private void adicionarCard() {
         Card card = new Card();
 

@@ -1,6 +1,6 @@
 package view;
 
-// # APIs #
+// -- APIs --
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -20,7 +20,7 @@ public class TelaResultado extends ScreenSetup {
 
         this.player = player;
 
-        // # Adicionar componentes a view #
+        // -- Adicionar componentes a view --
         adicionarCard();
         adicionarLabels(vencedor, pontuacao);
         adicionarImagens();
@@ -29,7 +29,7 @@ public class TelaResultado extends ScreenSetup {
         setVisible(true);
     }
 
-    // # Configuração componentes #
+    // -- Configuração componentes --
     private void adicionarCard() {
         Card card = new Card();
 

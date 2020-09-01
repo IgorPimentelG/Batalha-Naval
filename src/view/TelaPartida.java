@@ -1,6 +1,6 @@
 package view;
 
-// # APIs #
+// -- APIs --
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -55,7 +55,7 @@ public class TelaPartida extends ScreenSetup {
     }
 
     private void configuracaoScreen() {
-        // # Adicionar Componentes a View #
+        // -- Adicionar Componentes a View --
         adicionarCard();
         adicionarButton();
         adicionarMapa();
@@ -66,14 +66,14 @@ public class TelaPartida extends ScreenSetup {
         setVisible(true);
     }
 
-    // # Componentes #
+    // -- Componentes --
     private void adicionarCard() {
         Card card = new Card();
 
         JLabel cardViewSuperior = card.getCardSuperior(100, 30, 380, 60);
         add(cardViewSuperior, 0);
 
-        // # Logo #
+        // -- Logo --
         JLabel lblLogoEsquerdo = card.getIconeLateral(25, 15);
         add(lblLogoEsquerdo, 0);
 
@@ -122,7 +122,7 @@ public class TelaPartida extends ScreenSetup {
         add(mapa.gerarMapa(), 0);
     }
 
-    // # Getters #
+    // -- Getters --
     public Mapa getMapa() {
         return mapa;
     }
