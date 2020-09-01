@@ -1,6 +1,6 @@
 package view;
 
-// -- APIs --
+// # APIs #
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -45,17 +45,17 @@ public class TelaPartida extends ScreenSetup {
             JOptionPane.showMessageDialog(null, "<html><center>NÃO É POSSÍVEL INICIAR A PARTIDA.<br>" +
                             "O DESAFIADO AINDA NÃO MUDOU A SUA FORMAÇÃO PADRÃO" +
                             "<br>APÓS SUA ÚLTIMA BATALHA COM ELE.</center></html>",
-                    "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
+                    "♔ATENÇÃO!♔", JOptionPane.ERROR_MESSAGE);
             new TelaMenu(desafiante);
         } else {
-            JOptionPane.showMessageDialog(null, "A PARTIDA IRÁ COMEÇAR EM BREVE...", "≋ BATALHE! ≋", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "A PARTIDA IRÁ COMEÇAR EM BREVE...", "♔BATALHE!♔", JOptionPane.WARNING_MESSAGE);
         }
 
 
     }
 
     private void configuracaoScreen() {
-        // Adicionar Componentes a View
+        // # Adicionar Componentes a View #
         adicionarCard();
         adicionarButton();
         adicionarMapa();
@@ -66,14 +66,14 @@ public class TelaPartida extends ScreenSetup {
         setVisible(true);
     }
 
-    // -- Componentes --
+    // # Componentes #
     private void adicionarCard() {
         Card card = new Card();
 
         JLabel cardViewSuperior = card.getCardSuperior(100, 30, 380, 60);
         add(cardViewSuperior, 0);
 
-        // Logo
+        // # Logo #
         JLabel lblLogoEsquerdo = card.getIconeLateral(25, 15);
         add(lblLogoEsquerdo, 0);
 
@@ -82,13 +82,14 @@ public class TelaPartida extends ScreenSetup {
     }
 
     private void adicionarLabel() {
-        lblTitulo = new ModRotulo("〘 BATTLE 〙", 100, 50, 380, 20);
+        lblTitulo = new ModRotulo("☠  BATTLE ☠", 100, 50, 380, 20);
         lblTitulo.setHorizontalAlignment(JLabel.CENTER);
+        lblTitulo.setFont(new Font(Font.SERIF, Font.PLAIN, 16));
         add(lblTitulo, 0);
     }
 
     private void adicionarButton() {
-        JButton btnDesistir = new JButton("✖ DESISTIR ✖");
+        JButton btnDesistir = new JButton("✖   DESISTIR ✖");
         btnDesistir.setBackground(Cores.COLOR_LARANJA);
         btnDesistir.setForeground(Color.WHITE);
         btnDesistir.setBounds(220, 80, 150, 25);
@@ -121,7 +122,7 @@ public class TelaPartida extends ScreenSetup {
         add(mapa.gerarMapa(), 0);
     }
 
-    // -- Getters --
+    // # Getters #
     public Mapa getMapa() {
         return mapa;
     }

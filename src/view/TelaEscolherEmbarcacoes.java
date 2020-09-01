@@ -1,11 +1,11 @@
 package view;
 
-// APIs
+// # APIs #
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-// Pacotes
+// # Pacotes #
 import recursos.Imagens;
 import recursos.view.*;
 
@@ -27,7 +27,7 @@ public class TelaEscolherEmbarcacoes extends ScreenSetup {
 
         telaEditarFormacao.setVisible(false);
 
-        // -- Adicionar Componentes a View --
+        // # Adicionar Componentes a View #
         adicionarCard();
         adicionarLabels();
         adicionarButtons();
@@ -35,7 +35,7 @@ public class TelaEscolherEmbarcacoes extends ScreenSetup {
         setVisible(true);
     }
 
-    // -- Componentes --
+    // # Componentes #
     private void adicionarCard() {
         Card card = new Card();
 
@@ -57,28 +57,16 @@ public class TelaEscolherEmbarcacoes extends ScreenSetup {
         lblEmbarcacoes.setHorizontalAlignment(JLabel.CENTER);
         add(lblEmbarcacoes, 0);
 
-        JLabel lblQntdBarco2P = new JLabel(this.qntdEmbarcacoes2PDisponiveis);
-        lblQntdBarco2P.setForeground(Color.WHITE);
-        lblQntdBarco2P.setHorizontalAlignment(JLabel.CENTER);
-        lblQntdBarco2P.setBounds(35, 215, 100, 20);
+        JLabel lblQntdBarco2P = new ModLabel(this.qntdEmbarcacoes2PDisponiveis, 35, 215);
         add(lblQntdBarco2P, 0);
 
-        JLabel lblDisponiveisB2P = new JLabel("DISPONÍVEIS");
-        lblDisponiveisB2P.setForeground(Color.WHITE);
-        lblDisponiveisB2P.setHorizontalAlignment(JLabel.CENTER);
-        lblDisponiveisB2P.setBounds(35, 232, 100, 20);
+        JLabel lblDisponiveisB2P = new ModLabel("DISPONÍVEIS", 35, 232);
         add(lblDisponiveisB2P, 0);
 
-        JLabel lblQntdBarco3P = new JLabel(this.qntdEmbarcacoes3PDisponiveis);
-        lblQntdBarco3P.setForeground(Color.WHITE);
-        lblQntdBarco3P.setHorizontalAlignment(JLabel.CENTER);
-        lblQntdBarco3P.setBounds(158, 215, 100, 20);
+        JLabel lblQntdBarco3P = new ModLabel(this.qntdEmbarcacoes3PDisponiveis, 158, 215);
         add(lblQntdBarco3P, 0);
 
-        JLabel lblDisponiveisB3P = new JLabel("DISPONÍVEIS");
-        lblDisponiveisB3P.setForeground(Color.WHITE);
-        lblDisponiveisB3P.setHorizontalAlignment(JLabel.CENTER);
-        lblDisponiveisB3P.setBounds(158, 232, 100, 20);
+        JLabel lblDisponiveisB3P = new ModLabel("DISPONÍVEIS", 158, 232);
         add(lblDisponiveisB3P, 0);
     }
 
@@ -116,5 +104,15 @@ public class TelaEscolherEmbarcacoes extends ScreenSetup {
             }
         });
         add(btnBarco3P, 0);
+    }
+
+    private class ModLabel extends JLabel {
+    	public ModLabel(String texto, int x, int y) {
+    		super(texto);
+    		setForeground(Color.WHITE);
+    		setHorizontalAlignment(JLabel.CENTER);
+    		setBounds(x, y, 100, 20);
+    	}
+    	
     }
 }

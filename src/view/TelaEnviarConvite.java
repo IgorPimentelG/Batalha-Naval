@@ -1,6 +1,6 @@
 package view;
 
-// -- APIs --
+// # APIs #
 import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
@@ -25,7 +25,7 @@ public class TelaEnviarConvite extends ScreenSetup {
         super("World of Warships - Desafiar", 850, 520, Imagens.BACKGROUND_CONVITE);
         this.player = player;
 
-        // -- Adicionar Componentes a View --
+        // # Adicionar Componentes a View #
         adicionarCard();
         adicionarLabels();
         adicionarButtons();
@@ -35,7 +35,7 @@ public class TelaEnviarConvite extends ScreenSetup {
         setVisible(true);
     }
 
-    // -- Componentes --
+    // # Componentes #
     private void adicionarCard()  {
         Card card = new Card();
 
@@ -87,9 +87,9 @@ public class TelaEnviarConvite extends ScreenSetup {
 
                 
                 if(desafiado == null) {
-                    JOptionPane.showMessageDialog(null, "PLAYER NÃO ENCONTRADO! TENTE NOVAMENTE.", "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "PLAYER NÃO ENCONTRADO! TENTE NOVAMENTE.", "♔ ATENÇÃO!♔", JOptionPane.ERROR_MESSAGE);
                 } else if(player.getNickname().equals(inputBuscarJogador.getText())) {
-                    JOptionPane.showMessageDialog(null, "VOCÊ NÃO PODE DESAFIAR VOCÊ MESMO.", "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "VOCÃŠ NÃO PODE DESAFIAR VOCÊ MESMO.", "♔ATENÇÃO!♔", JOptionPane.ERROR_MESSAGE);
                 } else {
                     dispose();
                     new TelaPartida(player, desafiado);
@@ -120,7 +120,7 @@ public class TelaEnviarConvite extends ScreenSetup {
         JTable tabelaRanking = new TableMod(modeloTabela, 3);
         tabelaRanking.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             public void valueChanged(ListSelectionEvent e) {
-                // -- Configurar JTextField de pesquisa com o nickname selecionado na tabela
+                // # Configurar JTextField de pesquisa com o nickname selecionado na tabela #
                 if(!tabelaRanking.getValueAt(tabelaRanking.getSelectedRow(), 1).equals(player.getNickname())) {
                     inputBuscarJogador.setText(tabelaRanking.getValueAt(tabelaRanking.getSelectedRow(), 1).toString());
                     repaint();

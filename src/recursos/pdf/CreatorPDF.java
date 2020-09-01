@@ -49,24 +49,24 @@ public class CreatorPDF {
         paragraph = new Paragraph("\n\n\n\n\n\n\n\n\n\n\n\n\n");
         pdf.add(paragraph);
 
-        paragraph = new Paragraph("RELATÃ“RIO DAS " + tipo, fonteTitulo);
+        paragraph = new Paragraph("RELATÓRIO DAS " + tipo, fonteTitulo);
         paragraph.setAlignment(1);              // -- Centralizar Texto --
         pdf.add(paragraph);
 
         for(int i = 0; i < historicos.size(); i++) {
-            paragraph = new Paragraph("\n\n ------------------------------------------- [ " + (i + 1) + "Âª ] ------------------------------------------- \n", fonteTexto);
+            paragraph = new Paragraph("\n\n ------------------------------------------- [ " + (i + 1) + "ª ] ------------------------------------------- \n", fonteTexto);
             paragraph.setAlignment(1);
             pdf.add(paragraph);
             paragraph = new Paragraph("Player Desafiado: " + historicos.get(i).getDesafiado(), fonteTexto);
             paragraph.setAlignment(1);
             pdf.add(paragraph);
-            paragraph = new Paragraph("PontuaÃ§Ã£o: " + historicos.get(i).getPontuacao(), fonteTexto);
+            paragraph = new Paragraph("Pontuação: " + historicos.get(i).getPontuacao(), fonteTexto);
             paragraph.setAlignment(1);
             pdf.add(paragraph);
-            paragraph = new Paragraph("FormaÃ§Ã£o Desafiante: " + historicos.get(i).getFormacaoDesafiante(), fonteTexto);
+            paragraph = new Paragraph("Formação Desafiante: " + historicos.get(i).getFormacaoDesafiante(), fonteTexto);
             paragraph.setAlignment(1);
             pdf.add(paragraph);
-            paragraph = new Paragraph("FormaÃ§Ã£o Desafiado: " + historicos.get(i).getFormacaoDesafiado(), fonteTexto);
+            paragraph = new Paragraph("Formação Desafiado: " + historicos.get(i).getFormacaoDesafiado(), fonteTexto);
             paragraph.setAlignment(1);
             pdf.add(paragraph);
         }

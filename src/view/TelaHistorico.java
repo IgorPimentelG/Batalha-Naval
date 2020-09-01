@@ -42,7 +42,7 @@ public class TelaHistorico extends ScreenSetup {
         setVisible(true);
     }
 
-    // -- Componentes  --
+    // -- Componentes #
     private void adicionarCard() {
         Card card = new Card();
 
@@ -71,7 +71,7 @@ public class TelaHistorico extends ScreenSetup {
                 Historico historicoDetalhado = null;
 
                 if(tabelaHistorico.getSelectedRow() == -1) {
-                    JOptionPane.showMessageDialog(null, "NENHUAM PARTIDA FOI SELECIONADA!", "≋ ATENÇÃO! ≋", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "NENHUAM PARTIDA FOI SELECIONADA!", "♔ATENÇÃO!♔", JOptionPane.WARNING_MESSAGE);
                 } else {
                     String dataDoHistorico = historicos.get(tabelaHistorico.getSelectedRow()).getDataDaPartida();
 
@@ -136,13 +136,13 @@ public class TelaHistorico extends ScreenSetup {
         add(painelTabelaHistorico, 0);
     }
 
-    // -- Inner Class Relatório --
+    // -- Inner Class RelatÃ³rio --
     private class TelaGerarRelatorio extends ScreenSetup {
 
         private TelaHistorico telaHistorico;
 
         private TelaGerarRelatorio(TelaHistorico telaHistorico) {
-            super("≋ Relatório ≋", 255, 255, Imagens.BACKGROUN_MENU);
+            super("♔ RelatÃ³rio ♔", 255, 255, Imagens.BACKGROUN_MENU);
 
             this.telaHistorico = telaHistorico;
 
@@ -167,10 +167,10 @@ public class TelaHistorico extends ScreenSetup {
                 public void actionPerformed(ActionEvent evt) {
                     try {
                         new HistoricoControl().gerarRelatorioPartidasGanhas(player);
-                        JOptionPane.showMessageDialog(null, "RELATÓRIO GERADO COM SUCESSO!", "≋ RELATÓRIO ≋", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "RELATÓRIO GERADO COM SUCESSO!", "♔RELATÓRIO♔", JOptionPane.INFORMATION_MESSAGE);
                     } catch(Exception erro) {
-                        JOptionPane.showMessageDialog(null, "ACONTECEU UM ERRO AO GERAR O RELATÓRIO!", "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
-                        JOptionPane.showMessageDialog(null, erro.getMessage(), "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "ACONTECEU UM ERRO AO GERAR O RELATÓRIO!", "♔ATENÇÃO!♔", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, erro.getMessage(), "♔ ATENÇÃO!♔", JOptionPane.ERROR_MESSAGE);
                     }
                 }
             });
@@ -181,10 +181,10 @@ public class TelaHistorico extends ScreenSetup {
                 public void actionPerformed(ActionEvent evt) {
                     try {
                         new HistoricoControl().gerarRelatorioPartidasPerdidas(player);
-                        JOptionPane.showMessageDialog(null, "RELATÓRIO GERADO COM SUCESSO!", "≋ RELATÓRIO ≋", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "RELATÓRIO GERADO COM SUCESSO!", "♔RELATÓRIO♔", JOptionPane.INFORMATION_MESSAGE);
                     } catch (Exception erro) {
-                        JOptionPane.showMessageDialog(null, "ACONTECEU UM ERRO AO GERAR O RELATÓRIO!", "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
-                        JOptionPane.showMessageDialog(null, erro.getMessage(), "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "ACONTECEU UM ERRO AO GERAR O RELATÓRIO!", "♔ATENÇÃO!♔", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, erro.getMessage(), "♔ ATENÇÃO!♔", JOptionPane.ERROR_MESSAGE);
                     }
                 }
             });

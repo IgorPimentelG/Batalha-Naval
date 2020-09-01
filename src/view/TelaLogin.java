@@ -20,7 +20,7 @@ public class TelaLogin extends ScreenSetup {
     public TelaLogin() {
         super("World of Warships - Sign In", 800, 550, Imagens.BACKGROUN_SIGN_IN);
 
-        // -- Adicionar Componentes a View --
+        // # Adicionar Componentes a View #
         adicionarCard();
         adicionarInputs();
         adicionarLabels();
@@ -31,7 +31,7 @@ public class TelaLogin extends ScreenSetup {
         setVisible(true);
     }
 
-    // -- Componentes --
+    // # Componentes #
     private void adicionarCard() {
         Card card = new Card();
 
@@ -47,9 +47,10 @@ public class TelaLogin extends ScreenSetup {
 
     private void adicionarInputs() {
         inputEmail = new ModInput(240, 193, 315);
+        inputEmail.setText("igor.pimentel.msi@hotmail.com");
         add(inputEmail, 0);
 
-        inputPassword = new JPasswordField();
+        inputPassword = new JPasswordField("12345678");
         inputPassword.setHorizontalAlignment(JPasswordField.CENTER);
         inputPassword.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 14));
         inputPassword.setBounds(240, 265, 315, 35);
@@ -81,7 +82,7 @@ public class TelaLogin extends ScreenSetup {
                 String password = String.valueOf(inputPassword.getPassword());
 
                 if(email.isEmpty() && password.isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "PREENCHA TODOS OS DADOS!", "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "PREENCHA TODOS OS DADOS!", "♔ATENÇÃO!♔", JOptionPane.ERROR_MESSAGE);
                 } else {
                     try {
                         Persistencia persistencia = new Persistencia();
@@ -91,7 +92,7 @@ public class TelaLogin extends ScreenSetup {
                         dispose();
                         new TelaMenu(player);
                     } catch(Exception erro) {
-                        JOptionPane.showMessageDialog(null, erro.getMessage(), "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, erro.getMessage(), "♔ ATENÇÃO!♔", JOptionPane.ERROR_MESSAGE);
                     }
 
                 }

@@ -1,6 +1,6 @@
 package view;
 
-// APIs
+// # APIs #
 import java.awt.event.*;
 import java.util.*;
 import java.util.List;
@@ -15,14 +15,12 @@ import recursos.view.*;
 
 public class TelaEditarFormacao extends ScreenSetup {
 
-    // Atributos
     private TelaEscolherEmbarcacoes telaEscolherEmbarcacoes;
     private TelaEditarFormacao telaEditarFormacao = this;
 
     private Player player;
     private Mapa mapa;
 
-    // Construtor
     public TelaEditarFormacao(Player player)  {
         super("Editar Formação", 585, 505, Imagens.BACKGROUND_GAME);
         setUndecorated(true);
@@ -30,13 +28,13 @@ public class TelaEditarFormacao extends ScreenSetup {
         mapa = new Mapa(telaEscolherEmbarcacoes, telaEditarFormacao);
         this.player = player;
 
-        // -- Adicionar Componentes a View --
+        // # Adicionar Componentes a View #
         adicionarCard();
         adicionarLabel();
         adicionarButtons();
         adicionarMapa();
 
-        // -- Configurar Mapa Caso já Exista uma Formação Salva --
+        // # Configurar Mapa Caso já exista uma Formação salva #
         if(player.getFormacao().size() > 0) {
             mapa.getEditarFormacao().setFormacao(player.getFormacao());
             configurarMapa();
@@ -52,14 +50,14 @@ public class TelaEditarFormacao extends ScreenSetup {
         }
     }
 
-    // -- Componentes --
+    // # Componentes #
     private void adicionarCard() {
         Card card = new Card();
 
         JLabel cardViewSuperior = card.getCardSuperior(100, 30,380,60);
         add(cardViewSuperior, 0);
 
-        // Logo
+        // # Logo #
         JLabel lblLogoEsquerdo = card.getIconeLateral(25, 15);
         add(lblLogoEsquerdo, 0);
 
@@ -85,13 +83,13 @@ public class TelaEditarFormacao extends ScreenSetup {
 
                     playerControl.salvarFormacao(player, mapa.getEditarFormacao().getFormacao());
 
-                    JOptionPane.showMessageDialog(null, "FORMAÇÃO SALVA COM SUCESSO!", "≋ AVISO ≋", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "FORMAÇÃO SALVA COM SUCESSO!", "♔ AVISO♔", JOptionPane.INFORMATION_MESSAGE);
 
                     dispose();
 
                     new TelaMenu(playerControl.pesquisarPlayer(player));
                 } else {
-                    JOptionPane.showMessageDialog(null, "ADICIONE TODAS AS EMBARCAÇÕES DISPONÍVEIS!", "≋ ATENÇÃO! ≋", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "ADICIONE TODAS AS EMBARCACÕES DISPONÍVEIS!", "♔ ATENÇÃO!♔", JOptionPane.WARNING_MESSAGE);
                 }
             }
         });

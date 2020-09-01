@@ -43,7 +43,7 @@ public class TelaRecuperarConta extends ScreenSetup {
     }
 
     private void adicionarLabels() {
-        JLabel lblTitulo = new JLabel("• RECUPERE SUA CONTA •");
+        JLabel lblTitulo = new JLabel("♔   RECUPERE SUA CONTA ♔");
         lblTitulo.setBounds(125, 180, 355, 20);
         lblTitulo.setHorizontalAlignment(JLabel.CENTER);
         lblTitulo.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 14));
@@ -64,14 +64,14 @@ public class TelaRecuperarConta extends ScreenSetup {
 
                     JOptionPane.showMessageDialog(null,
                             "SENHA ALTERADA COM SUCESSO! VERIFIQUE SEU E-MAIL.",
-                            "≋ SUCESSO! ≋", JOptionPane.WARNING_MESSAGE);
+                            "♔ SUCESSO! ♔", JOptionPane.WARNING_MESSAGE);
 
                     dispose();
                     new TelaLogin();
                 } catch (DadosInvalidosException dadosInvalidosException) {
                     JOptionPane.showMessageDialog(null,
                             dadosInvalidosException.getMessage(),
-                            "≋ OPERAÇÃO INVÁLIDA! ≋", JOptionPane.ERROR_MESSAGE);
+                            "♔ OPERAÇÃO INVÁLIDA!♔", JOptionPane.ERROR_MESSAGE);
                 } catch (MessagingException messagingException) {
                     messagingException.printStackTrace();
                 }
@@ -79,7 +79,7 @@ public class TelaRecuperarConta extends ScreenSetup {
         });
         add(btnConfirmar, 0);
 
-        JButton btnCancelar = new ModButton("CANCELAR", 310, 280, 150);
+        JButton btnCancelar = new ModButton("⇖ CANCELAR", 310, 280, 150);
         btnCancelar.setBackground(new Color(5, 17, 41));
         btnCancelar.setForeground(Color.WHITE);
         btnCancelar.addActionListener(new ActionListener() {

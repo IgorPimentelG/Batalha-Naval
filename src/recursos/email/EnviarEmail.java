@@ -27,8 +27,8 @@ public class EnviarEmail extends EmailSetup {
     public void dadosConta(Player player) throws Exception {
         HistoricoControl historicoControl = new HistoricoControl();
 
-        criarMensagem("World of Warships - Conta ExcluÃ­da", "OlÃ¡, sua conta foi desativada permanentemente :( " +
-                "\nEm anexo contÃ©m arquivos com seu histÃ³rico enquanto sua conta foi ativa." + "\n\nEsperamos vocÃª de volta!!",
+        criarMensagem("World of Warships - Conta Excluída", "Olá, sua conta foi desativada permanentemente :( " +
+                "\nEm anexo contém arquivos com seus históricos enquanto sua conta foi ativa." + "\n\nEsperamos você de volta!!",
                 historicoControl.getArquivoPartidasGanhas(player),
                 historicoControl.getArquivoPartidasPerdidas(player));
 
@@ -40,7 +40,7 @@ public class EnviarEmail extends EmailSetup {
         Player player = controllerPlayer.autenticarEmail(enderecoEmail);
         String novaSenha = gerarNovaSenha();
 
-        criarMensagem("World of Warships - RecuperaÃ§Ã£o", "OlÃ¡, " + player.getNickname() + "\n\nEsqueceu sua senha? Uma nova senha foi gerada." +
+        criarMensagem("World of Warships - Recuperação", "Olá, " + player.getNickname() + "\n\nEsqueceu sua senha? Uma nova senha foi gerada." +
                 "\nUtilize a senha abaixo para acessar sua conta." +
                 "\nSua nova senha: " + novaSenha, null, null);
 

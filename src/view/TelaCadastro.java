@@ -22,7 +22,7 @@ public class TelaCadastro extends ScreenSetup {
     public TelaCadastro() {
         super("World of Warships - Sign Up", 800, 580, Imagens.BACKGROUN_SIGN_UP);
 
-        // -- Adicionar Componentes a View --
+        // # Adicionar Componentes a View #
         adicionarCard();
         adicionarLabels();
         adicionarInputs();
@@ -31,7 +31,7 @@ public class TelaCadastro extends ScreenSetup {
         setVisible(true);
     }
 
-    // -- Componentes --
+    // # Componentes #
     private void adicionarCard() {
         Card card = new Card();
 
@@ -99,14 +99,14 @@ public class TelaCadastro extends ScreenSetup {
                 String email = inputEmail.getText().toLowerCase();
                 String password = String.valueOf(inputPassword.getPassword());
 
-                // Validação dos Dados
+                // ValidaÃ§Ã£o dos Dados
                 if(!(nickname.isEmpty() && email.isEmpty() && password.isEmpty())) {
                     if(password.length() < 8) {
-                        JOptionPane.showMessageDialog(null, "A SENHA NECESSITA NO MÁNIMO 8 CARACTERES!", "≋ SENHA CURTA! ≋", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "A SENHA NECESSITA NO MÍNIMO 8 CARACTERES!", "♔ SENHA CURTA!♔", JOptionPane.WARNING_MESSAGE);
                         inputPassword.setText("");
                         inputConfirmPassword.setText("");
                     } else if(nickname.contains(" ")) {
-                        JOptionPane.showMessageDialog(null, "NICKNAME NÃO PODE CONTER ESPAÇOS!", "≋ NICKNAME INVÁLIDO! ≋", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "NICKNAME NÃO PODE CONTER ESPAÃ‡OS!", "♔ NICKNAME INVÁLIDO!♔", JOptionPane.ERROR_MESSAGE);
                     } else {
                         if(password.equals(String.valueOf(inputConfirmPassword.getPassword()))) {
 
@@ -115,28 +115,28 @@ public class TelaCadastro extends ScreenSetup {
                             try {
                                 Player player = playerControl.cadastrarUsuario(nickname, email, password);
 
-                                JOptionPane.showMessageDialog(null, "CADASTRO REALIZADO COM SUCESSO!", "≋ SEJA BEM-VINDO ≋", JOptionPane.INFORMATION_MESSAGE);
+                                JOptionPane.showMessageDialog(null, "CADASTRO REALIZADO COM SUCESSO!", "♔ SEJA BEM-VINDO ♔", JOptionPane.INFORMATION_MESSAGE);
                                 dispose();
-                                JOptionPane.showMessageDialog(null, "<html><center>AGORA VAMOS DEFINIR SUA FORMAÇÃOO PADRÃO PARA SUAS BATALHAS!"
-                                        + "<br>ALTERE A QUALQUER MOMENTO EM [MENU - SETTINGS - EDITAR FORMAÇÃO]</center></html>", "≋ SEJA BEM-VINDO ≋", JOptionPane.INFORMATION_MESSAGE);
+                                JOptionPane.showMessageDialog(null, "<html><center>AGORA VAMOS DEFINIR SUA FORMAÇÃO OO PADRÃO PARA SUAS BATALHAS!"
+                                        + "<br>ALTERE A QUALQUER MOMENTO EM [MENU - SETTINGS - EDITAR FORMAÇÃO]</center></html>", "♔ SEJA BEM-VINDO ♔", JOptionPane.INFORMATION_MESSAGE);
                                 new TelaEditarFormacao(player);
                             } catch (Exception e) {
-                                JOptionPane.showMessageDialog(null, e.getMessage(), "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
+                                JOptionPane.showMessageDialog(null, e.getMessage(), "♔ATENÇÃO!♔", JOptionPane.ERROR_MESSAGE);
                             }
                         } else {
-                            JOptionPane.showMessageDialog(null, "SENHAS INCORRETAS!", "≋ ATENÇÃO! ≋", JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(null, "SENHAS INCORRETAS!", "♔ATENÇÃO!♔", JOptionPane.ERROR_MESSAGE);
                             inputPassword.setText("");
                             inputConfirmPassword.setText("");
                         }
                     }
                 } else {
-                    JOptionPane.showMessageDialog(null, "PREENCHA TODOS OS DADOS!", "≋ ATENÇÃO! ≋", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "PREENCHA TODOS OS DADOS!", "♔ATENÇÃO!♔", JOptionPane.WARNING_MESSAGE);
                 }
             }
         });
         add(btnCadastrar, 0);
 
-        JButton btnCancelar = new ModButton("⇖ CANCELAR", 405,  445, 150);
+        JButton btnCancelar = new ModButton("⇖  CANCELAR", 405,  445, 150);
         btnCancelar.setBackground(Cores.COLOR_AZUL);
         btnCancelar.setForeground(Color.WHITE);
         btnCancelar.addActionListener(new ActionListener() {

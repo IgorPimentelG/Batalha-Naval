@@ -2,7 +2,7 @@ package exceptions;
 
 public class DadosInvalidosException extends Exception {
     public DadosInvalidosException() {
-        super("USU√ÅRIO N√ÉO ENCONTRADO!");
+        super("USU¡RIO N√O ENCONTRADO!");
     }
 
 }

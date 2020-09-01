@@ -1,1436 +1,442 @@
 <controller.PlayerControl>
   <usuariosCadastrados>
     <model.Player>
-      <nickname>player1</nickname>
+      <nickname>igor.pimentel</nickname>
       <email>igor.pimentel.msi@hotmail.com</email>
       <password>12345678</password>
-      <pontuacao>90</pontuacao>
+      <pontuacao>5</pontuacao>
       <formacao>
         <list>
-          <string>D1</string>
-          <string>D2</string>
+          <string>B1</string>
+          <string>B2</string>
         </list>
         <list>
           <string>A5</string>
           <string>B5</string>
         </list>
         <list>
-          <string>B1</string>
-          <string>B2</string>
-          <string>B3</string>
+          <string>E1</string>
+          <string>E2</string>
+          <string>E3</string>
         </list>
         <list>
-          <string>E5</string>
+          <string>C4</string>
+          <string>D4</string>
           <string>E4</string>
-          <string>E3</string>
         </list>
       </formacao>
       <historicos>
         <model.Historico>
-          <vencedor>player1</vencedor>
-          <desafiado>player2</desafiado>
-          <pontuacao>10</pontuacao>
-          <dataDaPartida>2020-08-19T15:42:03.67</dataDaPartida>
-          <formacaoDesafiante>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-            </list>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>B1</string>
-              <string>B2</string>
-              <string>B3</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-              <string>E3</string>
-            </list>
-          </formacaoDesafiante>
-          <formacaoDesafiado>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-              <string>D3</string>
-            </list>
-            <list>
-              <string>A1</string>
-              <string>B1</string>
-              <string>C1</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-            </list>
-          </formacaoDesafiado>
-          <plays>
-            <string>Player: player1 | Move: [C1] | Hit: sim</string>
-            <string>Player: player2 | Move: [A4] | Hit: não</string>
-            <string>Player: player1 | Move: [C2] | Hit: não</string>
-            <string>Player: player2 | Move: [C3] | Hit: não</string>
-            <string>Player: player1 | Move: [B1] | Hit: sim</string>
-            <string>Player: player2 | Move: [E2] | Hit: não</string>
-            <string>Player: player1 | Move: [A1] | Hit: sim</string>
-            <string>Player: player2 | Move: [E5] | Hit: sim</string>
-            <string>Player: player1 | Move: [D1] | Hit: sim</string>
-            <string>Player: player2 | Move: [E4] | Hit: sim</string>
-            <string>Player: player1 | Move: [D2] | Hit: sim</string>
-            <string>Player: player2 | Move: [C1] | Hit: não</string>
-            <string>Player: player1 | Move: [D3] | Hit: sim</string>
-            <string>Player: player2 | Move: [B2] | Hit: sim</string>
-            <string>Player: player1 | Move: [A5] | Hit: sim</string>
-            <string>Player: player2 | Move: [E1] | Hit: não</string>
-            <string>Player: player1 | Move: [B5] | Hit: sim</string>
-            <string>Player: player2 | Move: [C4] | Hit: não</string>
-            <string>Player: player1 | Move: [E5] | Hit: sim</string>
-            <string>Player: player2 | Move: [C5] | Hit: não</string>
-            <string>Player: player1 | Move: [C3] | Hit: não</string>
-            <string>Player: player2 | Move: [A3] | Hit: não</string>
-            <string>Player: player1 | Move: [B3] | Hit: não</string>
-            <string>Player: player2 | Move: [D1] | Hit: sim</string>
-            <string>Player: player1 | Move: [E4] | Hit: sim</string>
-          </plays>
-        </model.Historico>
-        <model.Historico>
-          <vencedor>player1</vencedor>
-          <desafiado>player2</desafiado>
-          <pontuacao>10</pontuacao>
-          <dataDaPartida>2020-08-19T15:54:03.085</dataDaPartida>
-          <formacaoDesafiante>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-            </list>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>B1</string>
-              <string>B2</string>
-              <string>B3</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-              <string>E3</string>
-            </list>
-          </formacaoDesafiante>
-          <formacaoDesafiado>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-              <string>D3</string>
-            </list>
-            <list>
-              <string>A1</string>
-              <string>B1</string>
-              <string>C1</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-            </list>
-          </formacaoDesafiado>
-          <plays>
-            <string>Player: player1 | Move: [A1] | Hit: sim</string>
-            <string>Player: player2 | Move: [E4] | Hit: sim</string>
-            <string>Player: player1 | Move: [B1] | Hit: sim</string>
-            <string>Player: player2 | Move: [B4] | Hit: não</string>
-            <string>Player: player1 | Move: [C1] | Hit: sim</string>
-            <string>Player: player2 | Move: [C5] | Hit: não</string>
-            <string>Player: player1 | Move: [A5] | Hit: sim</string>
-            <string>Player: player2 | Move: [A2] | Hit: não</string>
-            <string>Player: player1 | Move: [B5] | Hit: sim</string>
-            <string>Player: player2 | Move: [B2] | Hit: sim</string>
-            <string>Player: player1 | Move: [E5] | Hit: sim</string>
-            <string>Player: player2 | Move: [E5] | Hit: sim</string>
-            <string>Player: player1 | Move: [E4] | Hit: sim</string>
-            <string>Player: player2 | Move: [D2] | Hit: sim</string>
-            <string>Player: player1 | Move: [D1] | Hit: sim</string>
-            <string>Player: player2 | Move: [B3] | Hit: sim</string>
-            <string>Player: player1 | Move: [D2] | Hit: sim</string>
-            <string>Player: player2 | Move: [A3] | Hit: não</string>
-            <string>Player: player1 | Move: [D3] | Hit: sim</string>
-          </plays>
-        </model.Historico>
-        <model.Historico>
-          <vencedor>player1</vencedor>
-          <desafiado>player2</desafiado>
-          <pontuacao>10</pontuacao>
-          <dataDaPartida>2020-08-19T16:05:36.279</dataDaPartida>
-          <formacaoDesafiante>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-            </list>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>B1</string>
-              <string>B2</string>
-              <string>B3</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-              <string>E3</string>
-            </list>
-          </formacaoDesafiante>
-          <formacaoDesafiado>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-              <string>D3</string>
-            </list>
-            <list>
-              <string>A1</string>
-              <string>B1</string>
-              <string>C1</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-            </list>
-          </formacaoDesafiado>
-          <plays>
-            <string>Player: player1 | Move: [A1] | Hit: sim</string>
-            <string>Player: player2 | Move: [D5] | Hit: não</string>
-            <string>Player: player1 | Move: [B1] | Hit: sim</string>
-            <string>Player: player2 | Move: [B5] | Hit: sim</string>
-            <string>Player: player1 | Move: [C1] | Hit: sim</string>
-            <string>Player: player2 | Move: [B1] | Hit: sim</string>
-            <string>Player: player1 | Move: [A5] | Hit: sim</string>
-            <string>Player: player2 | Move: [A4] | Hit: não</string>
-            <string>Player: player1 | Move: [B5] | Hit: sim</string>
-            <string>Player: player2 | Move: [D2] | Hit: sim</string>
-            <string>Player: player1 | Move: [E5] | Hit: sim</string>
-            <string>Player: player2 | Move: [D1] | Hit: sim</string>
-            <string>Player: player1 | Move: [E4] | Hit: sim</string>
-            <string>Player: player2 | Move: [A3] | Hit: não</string>
-            <string>Player: player1 | Move: [D1] | Hit: sim</string>
-            <string>Player: player2 | Move: [C3] | Hit: não</string>
-            <string>Player: player1 | Move: [D2] | Hit: sim</string>
-            <string>Player: player2 | Move: [D4] | Hit: não</string>
-            <string>Player: player1 | Move: [D3] | Hit: sim</string>
-          </plays>
-        </model.Historico>
-        <model.Historico>
-          <vencedor>player1</vencedor>
-          <desafiado>player2</desafiado>
-          <pontuacao>10</pontuacao>
-          <dataDaPartida>2020-08-19T16:19:46.062</dataDaPartida>
-          <formacaoDesafiante>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-            </list>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>B1</string>
-              <string>B2</string>
-              <string>B3</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-              <string>E3</string>
-            </list>
-          </formacaoDesafiante>
-          <formacaoDesafiado>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-              <string>D3</string>
-            </list>
-            <list>
-              <string>A1</string>
-              <string>B1</string>
-              <string>C1</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-            </list>
-          </formacaoDesafiado>
-          <plays>
-            <string>Player: player1 | Move: [A1] | Hit: sim</string>
-            <string>Player: player2 | Move: [D3] | Hit: não</string>
-            <string>Player: player1 | Move: [B1] | Hit: sim</string>
-            <string>Player: player2 | Move: [E5] | Hit: sim</string>
-            <string>Player: player1 | Move: [C1] | Hit: sim</string>
-            <string>Player: player2 | Move: [D4] | Hit: não</string>
-            <string>Player: player1 | Move: [D1] | Hit: sim</string>
-            <string>Player: player2 | Move: [B4] | Hit: não</string>
-            <string>Player: player1 | Move: [D2] | Hit: sim</string>
-            <string>Player: player2 | Move: [C4] | Hit: não</string>
-            <string>Player: player1 | Move: [D3] | Hit: sim</string>
-            <string>Player: player2 | Move: [A5] | Hit: sim</string>
-            <string>Player: player1 | Move: [A5] | Hit: sim</string>
-            <string>Player: player2 | Move: [A1] | Hit: não</string>
-            <string>Player: player1 | Move: [B5] | Hit: sim</string>
-            <string>Player: player2 | Move: [D1] | Hit: sim</string>
-            <string>Player: player1 | Move: [E5] | Hit: sim</string>
-            <string>Player: player2 | Move: [E4] | Hit: sim</string>
-            <string>Player: player1 | Move: [E4] | Hit: sim</string>
-          </plays>
-        </model.Historico>
-        <model.Historico>
-          <vencedor>player1</vencedor>
-          <desafiado>player2</desafiado>
-          <pontuacao>10</pontuacao>
-          <dataDaPartida>2020-08-19T16:32:10.125</dataDaPartida>
-          <formacaoDesafiante>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-            </list>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>B1</string>
-              <string>B2</string>
-              <string>B3</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-              <string>E3</string>
-            </list>
-          </formacaoDesafiante>
-          <formacaoDesafiado>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-              <string>D3</string>
-            </list>
-            <list>
-              <string>A1</string>
-              <string>B1</string>
-              <string>C1</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-            </list>
-          </formacaoDesafiado>
-          <plays>
-            <string>Player: player1 | Move: [A1] | Hit: sim</string>
-            <string>Player: player2 | Move: [A1] | Hit: não</string>
-            <string>Player: player1 | Move: [B1] | Hit: sim</string>
-            <string>Player: player2 | Move: [E3] | Hit: sim</string>
-            <string>Player: player1 | Move: [C1] | Hit: sim</string>
-            <string>Player: player2 | Move: [E4] | Hit: sim</string>
-            <string>Player: player1 | Move: [A5] | Hit: sim</string>
-            <string>Player: player2 | Move: [B3] | Hit: sim</string>
-            <string>Player: player1 | Move: [B5] | Hit: sim</string>
-            <string>Player: player2 | Move: [C4] | Hit: não</string>
-            <string>Player: player1 | Move: [E5] | Hit: sim</string>
-            <string>Player: player2 | Move: [C2] | Hit: não</string>
-            <string>Player: player1 | Move: [E4] | Hit: sim</string>
-            <string>Player: player2 | Move: [E2] | Hit: não</string>
-            <string>Player: player1 | Move: [D1] | Hit: sim</string>
-            <string>Player: player2 | Move: [A4] | Hit: não</string>
-            <string>Player: player1 | Move: [D2] | Hit: sim</string>
-            <string>Player: player2 | Move: [A2] | Hit: não</string>
-            <string>Player: player1 | Move: [D3] | Hit: sim</string>
-          </plays>
-        </model.Historico>
-        <model.Historico>
-          <vencedor>player1</vencedor>
-          <desafiado>player2</desafiado>
-          <pontuacao>10</pontuacao>
-          <dataDaPartida>2020-08-19T16:36:20.268</dataDaPartida>
-          <formacaoDesafiante>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-            </list>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>B1</string>
-              <string>B2</string>
-              <string>B3</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-              <string>E3</string>
-            </list>
-          </formacaoDesafiante>
-          <formacaoDesafiado>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-              <string>D3</string>
-            </list>
-            <list>
-              <string>A1</string>
-              <string>B1</string>
-              <string>C1</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-            </list>
-          </formacaoDesafiado>
-          <plays>
-            <string>Player: player1 | Move: [A1] | Hit: sim</string>
-            <string>Player: player2 | Move: [E1] | Hit: não</string>
-            <string>Player: player1 | Move: [B1] | Hit: sim</string>
-            <string>Player: player2 | Move: [B5] | Hit: sim</string>
-            <string>Player: player1 | Move: [C1] | Hit: sim</string>
-            <string>Player: player2 | Move: [C4] | Hit: não</string>
-            <string>Player: player1 | Move: [A5] | Hit: sim</string>
-            <string>Player: player2 | Move: [C1] | Hit: não</string>
-            <string>Player: player1 | Move: [B5] | Hit: sim</string>
-            <string>Player: player2 | Move: [E2] | Hit: não</string>
-            <string>Player: player1 | Move: [E5] | Hit: sim</string>
-            <string>Player: player2 | Move: [A5] | Hit: sim</string>
-            <string>Player: player1 | Move: [E4] | Hit: sim</string>
-            <string>Player: player2 | Move: [B4] | Hit: não</string>
-            <string>Player: player1 | Move: [D1] | Hit: sim</string>
-            <string>Player: player2 | Move: [D3] | Hit: não</string>
-            <string>Player: player1 | Move: [D2] | Hit: sim</string>
-            <string>Player: player2 | Move: [D4] | Hit: não</string>
-            <string>Player: player1 | Move: [D3] | Hit: sim</string>
-          </plays>
-        </model.Historico>
-        <model.Historico>
-          <vencedor>player1</vencedor>
-          <desafiado>player2</desafiado>
-          <pontuacao>10</pontuacao>
-          <dataDaPartida>2020-08-19T16:39:21.833</dataDaPartida>
-          <formacaoDesafiante>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-            </list>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>B1</string>
-              <string>B2</string>
-              <string>B3</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-              <string>E3</string>
-            </list>
-          </formacaoDesafiante>
-          <formacaoDesafiado>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-              <string>D3</string>
-            </list>
-            <list>
-              <string>A1</string>
-              <string>B1</string>
-              <string>C1</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-            </list>
-          </formacaoDesafiado>
-          <plays>
-            <string>Player: player1 | Move: [A1] | Hit: sim</string>
-            <string>Player: player2 | Move: [E2] | Hit: não</string>
-            <string>Player: player1 | Move: [B1] | Hit: sim</string>
-            <string>Player: player2 | Move: [C4] | Hit: não</string>
-            <string>Player: player1 | Move: [C1] | Hit: sim</string>
-            <string>Player: player2 | Move: [C2] | Hit: não</string>
-            <string>Player: player1 | Move: [D1] | Hit: sim</string>
-            <string>Player: player2 | Move: [D1] | Hit: sim</string>
-            <string>Player: player1 | Move: [D2] | Hit: sim</string>
-            <string>Player: player2 | Move: [A2] | Hit: não</string>
-            <string>Player: player1 | Move: [D3] | Hit: sim</string>
-            <string>Player: player2 | Move: [D3] | Hit: não</string>
-            <string>Player: player1 | Move: [A5] | Hit: sim</string>
-            <string>Player: player2 | Move: [E3] | Hit: sim</string>
-            <string>Player: player1 | Move: [B5] | Hit: sim</string>
-            <string>Player: player2 | Move: [A5] | Hit: sim</string>
-            <string>Player: player1 | Move: [D5] | Hit: não</string>
-            <string>Player: player2 | Move: [D2] | Hit: sim</string>
-            <string>Player: player1 | Move: [E5] | Hit: sim</string>
-            <string>Player: player2 | Move: [B2] | Hit: sim</string>
-            <string>Player: player1 | Move: [E4] | Hit: sim</string>
-          </plays>
-        </model.Historico>
-        <model.Historico>
-          <vencedor>player2</vencedor>
-          <desafiado>player2</desafiado>
-          <pontuacao>-5</pontuacao>
-          <dataDaPartida>2020-08-19T16:51:05.626</dataDaPartida>
-          <formacaoDesafiante>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-            </list>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>B1</string>
-              <string>B2</string>
-              <string>B3</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-              <string>E3</string>
-            </list>
-          </formacaoDesafiante>
-          <formacaoDesafiado>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-              <string>D3</string>
-            </list>
-            <list>
-              <string>A1</string>
-              <string>B1</string>
-              <string>C1</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-            </list>
-          </formacaoDesafiado>
-          <plays>
-            <string>Player: player1 | Move: [C3] | Hit: não</string>
-            <string>Player: player2 | Move: [D5] | Hit: não</string>
-            <string>Player: player1 | Move: [C2] | Hit: não</string>
-            <string>Player: player2 | Move: [D2] | Hit: sim</string>
-            <string>Player: player1 | Move: [B3] | Hit: não</string>
-            <string>Player: player2 | Move: [E2] | Hit: não</string>
-            <string>Player: player1 | Move: [A3] | Hit: não</string>
-            <string>Player: player2 | Move: [A4] | Hit: não</string>
-            <string>Player: player1 | Move: [A5] | Hit: sim</string>
-            <string>Player: player2 | Move: [C5] | Hit: não</string>
-            <string>Player: player1 | Move: [A4] | Hit: não</string>
-            <string>Player: player2 | Move: [E1] | Hit: não</string>
-            <string>Player: player1 | Move: [D3] | Hit: sim</string>
-            <string>Player: player2 | Move: [E3] | Hit: sim</string>
-            <string>Player: player1 | Move: [C4] | Hit: não</string>
-            <string>Player: player2 | Move: [D1] | Hit: sim</string>
-            <string>Player: player1 | Move: [B2] | Hit: não</string>
-            <string>Player: player2 | Move: [B3] | Hit: sim</string>
-            <string>Player: player1 | Move: [A1] | Hit: sim</string>
-            <string>Player: player2 | Move: [A1] | Hit: não</string>
-            <string>Player: player1 | Move: [B1] | Hit: sim</string>
-            <string>Player: player2 | Move: [D4] | Hit: não</string>
-            <string>Player: player1 | Move: [C1] | Hit: sim</string>
-            <string>Player: player2 | Move: [B1] | Hit: sim</string>
-            <string>Player: player1 | Move: [D1] | Hit: sim</string>
-            <string>Player: player2 | Move: [B5] | Hit: sim</string>
-            <string>Player: player1 | Move: [D2] | Hit: sim</string>
-            <string>Player: player2 | Move: [B2] | Hit: sim</string>
-            <string>Player: player1 | Move: [B5] | Hit: sim</string>
-            <string>Player: player2 | Move: [C4] | Hit: não</string>
-            <string>Player: player1 | Move: [A2] | Hit: não</string>
-            <string>Player: player2 | Move: [E4] | Hit: sim</string>
-            <string>Player: player1 | Move: [E2] | Hit: não</string>
-            <string>Player: player2 | Move: [A5] | Hit: sim</string>
-            <string>Player: player1 | Move: [D4] | Hit: não</string>
-            <string>Player: player2 | Move: [A2] | Hit: não</string>
-            <string>Player: player1 | Move: [E5] | Hit: sim</string>
-            <string>Player: player2 | Move: [A3] | Hit: não</string>
-            <string>Player: player1 | Move: [D5] | Hit: não</string>
-            <string>Player: player2 | Move: [E5] | Hit: sim</string>
-          </plays>
-        </model.Historico>
-        <model.Historico>
-          <vencedor>player1</vencedor>
-          <desafiado>COMPUTADOR</desafiado>
-          <pontuacao>10</pontuacao>
-          <dataDaPartida>2020-08-19T17:02:08.884</dataDaPartida>
-          <formacaoDesafiante>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-            </list>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>B1</string>
-              <string>B2</string>
-              <string>B3</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-              <string>E3</string>
-            </list>
-          </formacaoDesafiante>
-          <formacaoDesafiado>
-            <list>
-              <string>A3</string>
-              <string>B3</string>
-            </list>
-            <list>
-              <string>C1</string>
-              <string>D1</string>
-            </list>
-            <list>
-              <string>D5</string>
-              <string>C5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>B2</string>
-              <string>C2</string>
-              <string>D2</string>
-            </list>
-          </formacaoDesafiado>
-          <plays>
-            <string>Player: player1 | Move: [B1] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [A3] | Hit: não</string>
-            <string>Player: player1 | Move: [B2] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [C3] | Hit: não</string>
-            <string>Player: player1 | Move: [C2] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [A2] | Hit: não</string>
-            <string>Player: player1 | Move: [C4] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [E1] | Hit: não</string>
-            <string>Player: player1 | Move: [D3] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [B5] | Hit: sim</string>
-            <string>Player: player1 | Move: [C3] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [C5] | Hit: não</string>
-            <string>Player: player1 | Move: [B3] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [C1] | Hit: não</string>
-            <string>Player: player1 | Move: [A3] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [C2] | Hit: não</string>
-            <string>Player: player1 | Move: [E3] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [D5] | Hit: não</string>
-            <string>Player: player1 | Move: [E4] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [B3] | Hit: sim</string>
-            <string>Player: player1 | Move: [D4] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [D2] | Hit: sim</string>
-            <string>Player: player1 | Move: [C5] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [D4] | Hit: não</string>
-            <string>Player: player1 | Move: [D5] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [B1] | Hit: sim</string>
-            <string>Player: player1 | Move: [E5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [A1] | Hit: não</string>
-            <string>Player: player1 | Move: [E2] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [A4] | Hit: não</string>
-            <string>Player: player1 | Move: [E1] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [E5] | Hit: sim</string>
-            <string>Player: player1 | Move: [D1] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [D1] | Hit: sim</string>
-            <string>Player: player1 | Move: [A1] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [E3] | Hit: sim</string>
-            <string>Player: player1 | Move: [A2] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [D3] | Hit: não</string>
-            <string>Player: player1 | Move: [A5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [B4] | Hit: não</string>
-            <string>Player: player1 | Move: [A4] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [C4] | Hit: não</string>
-            <string>Player: player1 | Move: [B4] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [E2] | Hit: não</string>
-            <string>Player: player1 | Move: [C1] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [E4] | Hit: sim</string>
-            <string>Player: player1 | Move: [D2] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [B2] | Hit: sim</string>
-            <string>Player: player1 | Move: [B5] | Hit: sim</string>
-          </plays>
-        </model.Historico>
-        <model.Historico reference="../model.Historico[9]"/>
-        <model.Historico reference="../model.Historico[9]"/>
-        <model.Historico reference="../model.Historico[9]"/>
-        <model.Historico reference="../model.Historico[9]"/>
-        <model.Historico reference="../model.Historico[9]"/>
-        <model.Historico>
           <vencedor>COMPUTADOR</vencedor>
           <desafiado>COMPUTADOR</desafiado>
           <pontuacao>-5</pontuacao>
-          <dataDaPartida>2020-08-19T17:11:56.165</dataDaPartida>
+          <dataDaPartida>2020-08-31T17:08:10.269</dataDaPartida>
           <formacaoDesafiante>
             <list>
-              <string>D1</string>
-              <string>D2</string>
+              <string>B1</string>
+              <string>B2</string>
             </list>
             <list>
               <string>A5</string>
               <string>B5</string>
             </list>
             <list>
-              <string>B1</string>
-              <string>B2</string>
-              <string>B3</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-              <string>E3</string>
-            </list>
-          </formacaoDesafiante>
-          <formacaoDesafiado>
-            <list>
-              <string>A1</string>
-              <string>B1</string>
-            </list>
-            <list>
-              <string>B2</string>
-              <string>C2</string>
-            </list>
-            <list>
-              <string>A3</string>
-              <string>A4</string>
-              <string>A5</string>
-            </list>
-            <list>
-              <string>E3</string>
-              <string>D3</string>
-              <string>C3</string>
-            </list>
-          </formacaoDesafiado>
-          <plays>
-            <string>Player: player1 | Move: [B2] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [E5] | Hit: sim</string>
-            <string>Player: player1 | Move: [C2] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [D5] | Hit: não</string>
-            <string>Player: player1 | Move: [D2] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [C1] | Hit: não</string>
-            <string>Player: player1 | Move: [E2] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [B5] | Hit: sim</string>
-            <string>Player: player1 | Move: [A3] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [A3] | Hit: não</string>
-            <string>Player: player1 | Move: [B3] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [C3] | Hit: não</string>
-            <string>Player: player1 | Move: [A4] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [C4] | Hit: não</string>
-            <string>Player: player1 | Move: [A2] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [A5] | Hit: sim</string>
-            <string>Player: player1 | Move: [A5] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [A2] | Hit: não</string>
-            <string>Player: player1 | Move: [B4] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [B2] | Hit: sim</string>
-            <string>Player: player1 | Move: [C3] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [D1] | Hit: sim</string>
-            <string>Player: player1 | Move: [C1] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [D3] | Hit: não</string>
-            <string>Player: player1 | Move: [D1] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [E3] | Hit: sim</string>
-            <string>Player: player1 | Move: [B1] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [A4] | Hit: não</string>
-            <string>Player: player1 | Move: [A1] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [B4] | Hit: não</string>
-            <string>Player: player1 | Move: [B5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [D2] | Hit: sim</string>
-            <string>Player: player1 | Move: [E3] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [E1] | Hit: não</string>
-            <string>Player: player1 | Move: [E1] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [D4] | Hit: não</string>
-            <string>Player: player1 | Move: [D4] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [B1] | Hit: sim</string>
-            <string>Player: player1 | Move: [C4] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [C2] | Hit: não</string>
-            <string>Player: player1 | Move: [D5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [E2] | Hit: não</string>
-            <string>Player: player1 | Move: [C5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [E4] | Hit: sim</string>
-            <string>Player: player1 | Move: [E5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [B3] | Hit: sim</string>
-          </plays>
-        </model.Historico>
-        <model.Historico>
-          <vencedor>COMPUTADOR</vencedor>
-          <desafiado>COMPUTADOR</desafiado>
-          <pontuacao>-5</pontuacao>
-          <dataDaPartida>2020-08-19T17:13:49.27</dataDaPartida>
-          <formacaoDesafiante>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-            </list>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>B1</string>
-              <string>B2</string>
-              <string>B3</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-              <string>E3</string>
-            </list>
-          </formacaoDesafiante>
-          <formacaoDesafiado>
-            <list>
-              <string>D1</string>
               <string>E1</string>
+              <string>E2</string>
+              <string>E3</string>
             </list>
+            <list>
+              <string>C4</string>
+              <string>D4</string>
+              <string>E4</string>
+            </list>
+          </formacaoDesafiante>
+          <formacaoDesafiado>
+            <list>
+              <string>E5</string>
+              <string>D5</string>
+            </list>
+            <list>
+              <string>D1</string>
+              <string>D2</string>
+            </list>
+            <list>
+              <string>B4</string>
+              <string>B3</string>
+              <string>B2</string>
+            </list>
+            <list>
+              <string>E1</string>
+              <string>E2</string>
+              <string>E3</string>
+            </list>
+          </formacaoDesafiado>
+          <plays>
+            <string>Player: igor.pimentel | Move: [C3] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [C4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [D2] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [A4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [A3] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [B2] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [B1] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [C1] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [B5] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [C5] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [D5] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [D4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [E5] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [C2] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [A2] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [E2] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [E1] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [E3] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [D3] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [D1] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [A5] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [B4] | Hit: sim</string>
+          </plays>
+        </model.Historico>
+        <model.Historico>
+          <vencedor>COMPUTADOR</vencedor>
+          <desafiado>COMPUTADOR</desafiado>
+          <pontuacao>-5</pontuacao>
+          <dataDaPartida>2020-08-31T17:12:54.054</dataDaPartida>
+          <formacaoDesafiante>
             <list>
               <string>B1</string>
-              <string>C1</string>
+              <string>B2</string>
             </list>
             <list>
+              <string>A5</string>
+              <string>B5</string>
+            </list>
+            <list>
+              <string>E1</string>
+              <string>E2</string>
+              <string>E3</string>
+            </list>
+            <list>
+              <string>C4</string>
+              <string>D4</string>
+              <string>E4</string>
+            </list>
+          </formacaoDesafiante>
+          <formacaoDesafiado>
+            <list>
               <string>D3</string>
-              <string>C3</string>
+              <string>E3</string>
+            </list>
+            <list>
+              <string>A2</string>
+              <string>A3</string>
+            </list>
+            <list>
+              <string>E2</string>
+              <string>D2</string>
+              <string>C2</string>
+            </list>
+            <list>
+              <string>D1</string>
+              <string>C1</string>
+              <string>B1</string>
+            </list>
+          </formacaoDesafiado>
+          <plays>
+            <string>Player: igor.pimentel | Move: [D2] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [D1] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [D3] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [B2] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [B3] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [A4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [C4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [B5] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [C3] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [C2] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [B1] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [A2] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [A3] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [B4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [E4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [E1] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [E2] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [D5] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [C5] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [E5] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [A5] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [D4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [E3] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [A1] | Hit: não</string>
+          </plays>
+        </model.Historico>
+        <model.Historico>
+          <vencedor>igor.pimentel</vencedor>
+          <desafiado>COMPUTADOR</desafiado>
+          <pontuacao>10</pontuacao>
+          <dataDaPartida>2020-08-31T23:42:48.036</dataDaPartida>
+          <formacaoDesafiante>
+            <list>
+              <string>B1</string>
+              <string>B2</string>
+            </list>
+            <list>
+              <string>A5</string>
+              <string>B5</string>
+            </list>
+            <list>
+              <string>E1</string>
+              <string>E2</string>
+              <string>E3</string>
+            </list>
+            <list>
+              <string>C4</string>
+              <string>D4</string>
+              <string>E4</string>
+            </list>
+          </formacaoDesafiante>
+          <formacaoDesafiado>
+            <list>
+              <string>B5</string>
+              <string>C5</string>
+            </list>
+            <list>
+              <string>D2</string>
+              <string>E2</string>
+            </list>
+            <list>
+              <string>A3</string>
               <string>B3</string>
+              <string>C3</string>
+            </list>
+            <list>
+              <string>E5</string>
+              <string>E4</string>
+              <string>E3</string>
+            </list>
+          </formacaoDesafiado>
+          <plays>
+            <string>Player: igor.pimentel | Move: [B2] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [B1] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [C3] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [C2] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [C1] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [D2] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [D1] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [A1] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [A2] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [A3] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [A4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [A5] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [B3] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [E5] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [E4] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [C4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [B4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [B5] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [C5] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [E1] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [E2] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [D4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [D3] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [E3] | Hit: sim</string>
+          </plays>
+        </model.Historico>
+        <model.Historico>
+          <vencedor>COMPUTADOR</vencedor>
+          <desafiado>COMPUTADOR</desafiado>
+          <pontuacao>-5</pontuacao>
+          <dataDaPartida>2020-09-01T11:00:21.794</dataDaPartida>
+          <formacaoDesafiante>
+            <list>
+              <string>B1</string>
+              <string>B2</string>
+            </list>
+            <list>
+              <string>A5</string>
+              <string>B5</string>
+            </list>
+            <list>
+              <string>E1</string>
+              <string>E2</string>
+              <string>E3</string>
+            </list>
+            <list>
+              <string>C4</string>
+              <string>D4</string>
+              <string>E4</string>
+            </list>
+          </formacaoDesafiante>
+          <formacaoDesafiado>
+            <list>
+              <string>A5</string>
+              <string>A4</string>
+            </list>
+            <list>
+              <string>C3</string>
+              <string>D3</string>
+            </list>
+            <list>
+              <string>E2</string>
+              <string>D2</string>
+              <string>C2</string>
+            </list>
+            <list>
+              <string>E1</string>
+              <string>D1</string>
+              <string>C1</string>
+            </list>
+          </formacaoDesafiado>
+          <plays>
+            <string>Player: igor.pimentel | Move: [B3] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [B2] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [C1] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [B5] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [B4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [C4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [D4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [E3] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [D3] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [C3] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [A3] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [A4] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [A2] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [A1] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [D1] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [D2] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [C2] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [A5] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [D5] | Hit: não</string>
+          </plays>
+        </model.Historico>
+        <model.Historico>
+          <vencedor>igor.pimentel</vencedor>
+          <desafiado>COMPUTADOR</desafiado>
+          <pontuacao>10</pontuacao>
+          <dataDaPartida>2020-09-01T11:01:38.839</dataDaPartida>
+          <formacaoDesafiante>
+            <list>
+              <string>B1</string>
+              <string>B2</string>
+            </list>
+            <list>
+              <string>A5</string>
+              <string>B5</string>
+            </list>
+            <list>
+              <string>E1</string>
+              <string>E2</string>
+              <string>E3</string>
+            </list>
+            <list>
+              <string>C4</string>
+              <string>D4</string>
+              <string>E4</string>
+            </list>
+          </formacaoDesafiante>
+          <formacaoDesafiado>
+            <list>
+              <string>C2</string>
+              <string>D2</string>
             </list>
             <list>
               <string>E2</string>
               <string>E3</string>
-              <string>E4</string>
-            </list>
-          </formacaoDesafiado>
-          <plays>
-            <string>Player: player1 | Move: [C3] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [E5] | Hit: sim</string>
-            <string>Player: player1 | Move: [D3] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [D2] | Hit: sim</string>
-            <string>Player: player1 | Move: [E3] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [C4] | Hit: não</string>
-            <string>Player: player1 | Move: [B3] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [D1] | Hit: sim</string>
-            <string>Player: player1 | Move: [B2] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [C3] | Hit: não</string>
-            <string>Player: player1 | Move: [B1] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [E3] | Hit: sim</string>
-            <string>Player: player1 | Move: [B5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [A5] | Hit: sim</string>
-            <string>Player: player1 | Move: [A5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [B4] | Hit: não</string>
-            <string>Player: player1 | Move: [C5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [D3] | Hit: não</string>
-            <string>Player: player1 | Move: [D5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [E1] | Hit: não</string>
-            <string>Player: player1 | Move: [E5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [B2] | Hit: sim</string>
-            <string>Player: player1 | Move: [E4] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [E2] | Hit: não</string>
-            <string>Player: player1 | Move: [D4] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [C2] | Hit: não</string>
-            <string>Player: player1 | Move: [C4] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [A2] | Hit: não</string>
-            <string>Player: player1 | Move: [A4] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [B5] | Hit: sim</string>
-            <string>Player: player1 | Move: [B4] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [C1] | Hit: não</string>
-            <string>Player: player1 | Move: [D2] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [D5] | Hit: não</string>
-            <string>Player: player1 | Move: [E2] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [A4] | Hit: não</string>
-            <string>Player: player1 | Move: [C1] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [A3] | Hit: não</string>
-            <string>Player: player1 | Move: [A2] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [C5] | Hit: não</string>
-            <string>Player: player1 | Move: [C2] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [B1] | Hit: sim</string>
-            <string>Player: player1 | Move: [A1] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [E4] | Hit: sim</string>
-            <string>Player: player1 | Move: [D1] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [D4] | Hit: não</string>
-            <string>Player: player1 | Move: [A3] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [B3] | Hit: sim</string>
-          </plays>
-        </model.Historico>
-        <model.Historico>
-          <vencedor>player1</vencedor>
-          <desafiado>player2</desafiado>
-          <pontuacao>10</pontuacao>
-          <dataDaPartida>2020-08-19T23:19:49.712</dataDaPartida>
-          <formacaoDesafiante>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
             </list>
             <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>B1</string>
-              <string>B2</string>
+              <string>A3</string>
               <string>B3</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-              <string>E3</string>
-            </list>
-          </formacaoDesafiante>
-          <formacaoDesafiado>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-              <string>D3</string>
-            </list>
-            <list>
-              <string>A1</string>
-              <string>B1</string>
-              <string>C1</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-            </list>
-          </formacaoDesafiado>
-          <plays>
-            <string>Player: player1 | Move: [B2] | Hit: não</string>
-            <string>Player: player2 | Move: [D5] | Hit: não</string>
-            <string>Player: player1 | Move: [C2] | Hit: não</string>
-            <string>Player: player2 | Move: [B2] | Hit: sim</string>
-            <string>Player: player1 | Move: [C1] | Hit: sim</string>
-            <string>Player: player2 | Move: [C5] | Hit: não</string>
-            <string>Player: player1 | Move: [B1] | Hit: sim</string>
-            <string>Player: player2 | Move: [C3] | Hit: não</string>
-            <string>Player: player1 | Move: [D1] | Hit: sim</string>
-            <string>Player: player2 | Move: [E5] | Hit: sim</string>
-            <string>Player: player1 | Move: [E2] | Hit: não</string>
-            <string>Player: player2 | Move: [C4] | Hit: não</string>
-            <string>Player: player1 | Move: [C5] | Hit: não</string>
-            <string>Player: player2 | Move: [B5] | Hit: sim</string>
-            <string>Player: player1 | Move: [A5] | Hit: sim</string>
-            <string>Player: player2 | Move: [D1] | Hit: sim</string>
-            <string>Player: player1 | Move: [B5] | Hit: sim</string>
-            <string>Player: player2 | Move: [A2] | Hit: não</string>
-            <string>Player: player1 | Move: [E5] | Hit: sim</string>
-            <string>Player: player2 | Move: [A5] | Hit: sim</string>
-            <string>Player: player1 | Move: [E4] | Hit: sim</string>
-            <string>Player: player2 | Move: [E4] | Hit: sim</string>
-            <string>Player: player1 | Move: [A3] | Hit: não</string>
-            <string>Player: player2 | Move: [C2] | Hit: não</string>
-            <string>Player: player1 | Move: [A1] | Hit: sim</string>
-            <string>Player: player2 | Move: [A4] | Hit: não</string>
-            <string>Player: player1 | Move: [A2] | Hit: não</string>
-            <string>Player: player2 | Move: [A1] | Hit: não</string>
-            <string>Player: player1 | Move: [D2] | Hit: sim</string>
-            <string>Player: player2 | Move: [E3] | Hit: sim</string>
-            <string>Player: player1 | Move: [D3] | Hit: sim</string>
-          </plays>
-        </model.Historico>
-        <model.Historico reference="../model.Historico[17]"/>
-        <model.Historico reference="../model.Historico[17]"/>
-        <model.Historico reference="../model.Historico[17]"/>
-        <model.Historico reference="../model.Historico[17]"/>
-        <model.Historico reference="../model.Historico[17]"/>
-        <model.Historico>
-          <vencedor>player1</vencedor>
-          <desafiado>player2</desafiado>
-          <pontuacao>10</pontuacao>
-          <dataDaPartida>2020-08-19T23:20:40.749</dataDaPartida>
-          <formacaoDesafiante>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-            </list>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>B1</string>
-              <string>B2</string>
-              <string>B3</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-              <string>E3</string>
-            </list>
-          </formacaoDesafiante>
-          <formacaoDesafiado>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-              <string>D3</string>
-            </list>
-            <list>
-              <string>A1</string>
-              <string>B1</string>
-              <string>C1</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-            </list>
-          </formacaoDesafiado>
-          <plays>
-            <string>Player: player1 | Move: [B2] | Hit: não</string>
-            <string>Player: player2 | Move: [E3] | Hit: sim</string>
-            <string>Player: player1 | Move: [B1] | Hit: sim</string>
-            <string>Player: player2 | Move: [E1] | Hit: não</string>
-            <string>Player: player1 | Move: [C1] | Hit: sim</string>
-            <string>Player: player2 | Move: [C4] | Hit: não</string>
-            <string>Player: player1 | Move: [D1] | Hit: sim</string>
-            <string>Player: player2 | Move: [D2] | Hit: sim</string>
-            <string>Player: player1 | Move: [D2] | Hit: sim</string>
-            <string>Player: player2 | Move: [B1] | Hit: sim</string>
-            <string>Player: player1 | Move: [D3] | Hit: sim</string>
-            <string>Player: player2 | Move: [C2] | Hit: não</string>
-            <string>Player: player1 | Move: [A5] | Hit: sim</string>
-            <string>Player: player2 | Move: [D4] | Hit: não</string>
-            <string>Player: player1 | Move: [B5] | Hit: sim</string>
-            <string>Player: player2 | Move: [B3] | Hit: sim</string>
-            <string>Player: player1 | Move: [E5] | Hit: sim</string>
-            <string>Player: player2 | Move: [A1] | Hit: não</string>
-            <string>Player: player1 | Move: [E4] | Hit: sim</string>
-            <string>Player: player2 | Move: [D3] | Hit: não</string>
-            <string>Player: player1 | Move: [A1] | Hit: sim</string>
-          </plays>
-        </model.Historico>
-        <model.Historico reference="../model.Historico[23]"/>
-        <model.Historico reference="../model.Historico[23]"/>
-        <model.Historico reference="../model.Historico[23]"/>
-        <model.Historico reference="../model.Historico[23]"/>
-        <model.Historico reference="../model.Historico[23]"/>
-        <model.Historico>
-          <vencedor>player1</vencedor>
-          <desafiado>player2</desafiado>
-          <pontuacao>10</pontuacao>
-          <dataDaPartida>2020-08-20T01:47:09.94</dataDaPartida>
-          <formacaoDesafiante>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-            </list>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>B1</string>
-              <string>B2</string>
-              <string>B3</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-              <string>E3</string>
-            </list>
-          </formacaoDesafiante>
-          <formacaoDesafiado>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-              <string>D3</string>
-            </list>
-            <list>
-              <string>A1</string>
-              <string>B1</string>
-              <string>C1</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-            </list>
-          </formacaoDesafiado>
-          <plays>
-            <string>Player: player1 | Move: [A1] | Hit: sim</string>
-            <string>Player: player2 | Move: [E4] | Hit: sim</string>
-            <string>Player: player1 | Move: [B1] | Hit: sim</string>
-            <string>Player: player2 | Move: [B4] | Hit: não</string>
-            <string>Player: player1 | Move: [C1] | Hit: sim</string>
-            <string>Player: player2 | Move: [D3] | Hit: não</string>
-            <string>Player: player1 | Move: [D1] | Hit: sim</string>
-            <string>Player: player2 | Move: [C4] | Hit: não</string>
-            <string>Player: player1 | Move: [D2] | Hit: sim</string>
-            <string>Player: player2 | Move: [A3] | Hit: não</string>
-            <string>Player: player1 | Move: [D3] | Hit: sim</string>
-            <string>Player: player2 | Move: [C1] | Hit: não</string>
-            <string>Player: player1 | Move: [A5] | Hit: sim</string>
-            <string>Player: player2 | Move: [B3] | Hit: sim</string>
-            <string>Player: player1 | Move: [A4] | Hit: não</string>
-            <string>Player: player2 | Move: [D5] | Hit: não</string>
-            <string>Player: player1 | Move: [B5] | Hit: sim</string>
-            <string>Player: player2 | Move: [A2] | Hit: não</string>
-            <string>Player: player1 | Move: [E5] | Hit: sim</string>
-            <string>Player: player2 | Move: [A5] | Hit: sim</string>
-            <string>Player: player1 | Move: [E4] | Hit: sim</string>
-          </plays>
-        </model.Historico>
-        <model.Historico reference="../model.Historico[29]"/>
-        <model.Historico reference="../model.Historico[29]"/>
-        <model.Historico reference="../model.Historico[29]"/>
-        <model.Historico reference="../model.Historico[29]"/>
-        <model.Historico reference="../model.Historico[29]"/>
-        <model.Historico>
-          <vencedor>player2</vencedor>
-          <desafiado>player2</desafiado>
-          <pontuacao>-5</pontuacao>
-          <dataDaPartida>2020-08-20T02:06:25.204</dataDaPartida>
-          <formacaoDesafiante>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-            </list>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>B1</string>
-              <string>B2</string>
-              <string>B3</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-              <string>E3</string>
-            </list>
-          </formacaoDesafiante>
-          <formacaoDesafiado>
-            <list>
-              <string>B2</string>
-              <string>B3</string>
-            </list>
-            <list>
-              <string>E3</string>
-              <string>E4</string>
-            </list>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-              <string>C5</string>
-            </list>
-            <list>
-              <string>E1</string>
-              <string>D1</string>
-              <string>C1</string>
-            </list>
-          </formacaoDesafiado>
-          <plays>
-            <string>Player: player1 | Move: [A1] | Hit: não</string>
-            <string>Player: player2 | Move: [A2] | Hit: não</string>
-            <string>Player: player1 | Move: [C1] | Hit: sim</string>
-            <string>Player: player2 | Move: [C4] | Hit: não</string>
-            <string>Player: player1 | Move: [C2] | Hit: não</string>
-            <string>Player: player2 | Move: [E2] | Hit: não</string>
-            <string>Player: player1 | Move: [B1] | Hit: não</string>
-            <string>Player: player2 | Move: [B4] | Hit: não</string>
-            <string>Player: player1 | Move: [B2] | Hit: sim</string>
-            <string>Player: player2 | Move: [D4] | Hit: não</string>
-            <string>Player: player1 | Move: [D3] | Hit: não</string>
-            <string>Player: player2 | Move: [A3] | Hit: não</string>
-            <string>Player: player1 | Move: [D2] | Hit: não</string>
-            <string>Player: player2 | Move: [E4] | Hit: sim</string>
-            <string>Player: player1 | Move: [E2] | Hit: não</string>
-            <string>Player: player2 | Move: [C1] | Hit: não</string>
-            <string>Player: player1 | Move: [E3] | Hit: sim</string>
-            <string>Player: player2 | Move: [A5] | Hit: sim</string>
-            <string>Player: player1 | Move: [A3] | Hit: não</string>
-            <string>Player: player2 | Move: [A1] | Hit: não</string>
-            <string>Player: player1 | Move: [A4] | Hit: não</string>
-            <string>Player: player2 | Move: [C5] | Hit: não</string>
-            <string>Player: player1 | Move: [B3] | Hit: sim</string>
-            <string>Player: player2 | Move: [E1] | Hit: não</string>
-            <string>Player: player1 | Move: [C4] | Hit: não</string>
-            <string>Player: player2 | Move: [C2] | Hit: não</string>
-            <string>Player: player1 | Move: [C3] | Hit: não</string>
-            <string>Player: player2 | Move: [D1] | Hit: sim</string>
-            <string>Player: player1 | Move: [B4] | Hit: não</string>
-            <string>Player: player2 | Move: [B3] | Hit: sim</string>
-            <string>Player: player1 | Move: [D1] | Hit: sim</string>
-            <string>Player: player2 | Move: [E5] | Hit: sim</string>
-            <string>Player: player1 | Move: [A2] | Hit: não</string>
-            <string>Player: player2 | Move: [D2] | Hit: sim</string>
-            <string>Player: player1 | Move: [A5] | Hit: sim</string>
-            <string>Player: player2 | Move: [D3] | Hit: não</string>
-            <string>Player: player1 | Move: [D4] | Hit: não</string>
-            <string>Player: player2 | Move: [E3] | Hit: sim</string>
-            <string>Player: player1 | Move: [D5] | Hit: não</string>
-            <string>Player: player2 | Move: [B1] | Hit: sim</string>
-            <string>Player: player1 | Move: [E1] | Hit: sim</string>
-            <string>Player: player2 | Move: [B2] | Hit: sim</string>
-            <string>Player: player1 | Move: [E5] | Hit: não</string>
-            <string>Player: player2 | Move: [C3] | Hit: não</string>
-            <string>Player: player1 | Move: [C5] | Hit: sim</string>
-            <string>Player: player2 | Move: [B5] | Hit: sim</string>
-          </plays>
-        </model.Historico>
-        <model.Historico>
-          <vencedor>player1</vencedor>
-          <desafiado>COMPUTADOR</desafiado>
-          <pontuacao>10</pontuacao>
-          <dataDaPartida>2020-08-20T02:07:41.566</dataDaPartida>
-          <formacaoDesafiante>
-            <list>
-              <string>D1</string>
-              <string>D2</string>
-            </list>
-            <list>
-              <string>A5</string>
-              <string>B5</string>
-            </list>
-            <list>
-              <string>B1</string>
-              <string>B2</string>
-              <string>B3</string>
-            </list>
-            <list>
-              <string>E5</string>
-              <string>E4</string>
-              <string>E3</string>
-            </list>
-          </formacaoDesafiante>
-          <formacaoDesafiado>
-            <list>
-              <string>D5</string>
-              <string>D4</string>
+              <string>C3</string>
             </list>
             <list>
               <string>B4</string>
               <string>C4</string>
-            </list>
-            <list>
-              <string>B3</string>
-              <string>C3</string>
-              <string>D3</string>
-            </list>
-            <list>
-              <string>A1</string>
-              <string>B1</string>
-              <string>C1</string>
+              <string>D4</string>
             </list>
           </formacaoDesafiado>
           <plays>
-            <string>Player: player1 | Move: [C2] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [C5] | Hit: não</string>
-            <string>Player: player1 | Move: [C1] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [B1] | Hit: sim</string>
-            <string>Player: player1 | Move: [B1] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [E2] | Hit: não</string>
-            <string>Player: player1 | Move: [D1] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [B3] | Hit: sim</string>
-            <string>Player: player1 | Move: [C5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [A1] | Hit: não</string>
-            <string>Player: player1 | Move: [D5] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [C1] | Hit: não</string>
-            <string>Player: player1 | Move: [E5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [A5] | Hit: sim</string>
-            <string>Player: player1 | Move: [D4] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [E5] | Hit: sim</string>
-            <string>Player: player1 | Move: [D3] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [A4] | Hit: não</string>
-            <string>Player: player1 | Move: [A5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [C4] | Hit: não</string>
-            <string>Player: player1 | Move: [A3] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [A2] | Hit: não</string>
-            <string>Player: player1 | Move: [A1] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [B4] | Hit: não</string>
-            <string>Player: player1 | Move: [E1] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [E1] | Hit: não</string>
-            <string>Player: player1 | Move: [E3] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [E4] | Hit: sim</string>
-            <string>Player: player1 | Move: [B3] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [C3] | Hit: não</string>
-            <string>Player: player1 | Move: [B2] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [B2] | Hit: sim</string>
-            <string>Player: player1 | Move: [B4] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [C2] | Hit: não</string>
-            <string>Player: player1 | Move: [B5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [D5] | Hit: não</string>
-            <string>Player: player1 | Move: [C3] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [E3] | Hit: sim</string>
-            <string>Player: player1 | Move: [C4] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [B3] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [C2] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [C3] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [C1] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [C4] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [B4] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [C5] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [B5] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [B2] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [D3] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [E2] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [E3] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [E4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [E5] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [D1] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [D2] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [D4] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [D5] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [A3] | Hit: sim</string>
           </plays>
         </model.Historico>
-        <model.Historico reference="../model.Historico[36]"/>
-        <model.Historico reference="../model.Historico[36]"/>
-        <model.Historico reference="../model.Historico[36]"/>
-        <model.Historico reference="../model.Historico[36]"/>
-        <model.Historico reference="../model.Historico[36]"/>
         <model.Historico>
-          <vencedor>player1</vencedor>
+          <vencedor>COMPUTADOR</vencedor>
           <desafiado>COMPUTADOR</desafiado>
-          <pontuacao>10</pontuacao>
-          <dataDaPartida>2020-08-20T02:16:05.865</dataDaPartida>
+          <pontuacao>-5</pontuacao>
+          <dataDaPartida>2020-09-01T11:07:39.928</dataDaPartida>
           <formacaoDesafiante>
             <list>
-              <string>D1</string>
-              <string>D2</string>
+              <string>B1</string>
+              <string>B2</string>
             </list>
             <list>
               <string>A5</string>
               <string>B5</string>
             </list>
             <list>
-              <string>B1</string>
-              <string>B2</string>
-              <string>B3</string>
+              <string>E1</string>
+              <string>E2</string>
+              <string>E3</string>
             </list>
             <list>
-              <string>E5</string>
+              <string>C4</string>
+              <string>D4</string>
               <string>E4</string>
-              <string>E3</string>
             </list>
           </formacaoDesafiante>
           <formacaoDesafiado>
             <list>
-              <string>C4</string>
+              <string>E5</string>
+              <string>E4</string>
+            </list>
+            <list>
+              <string>E3</string>
+              <string>D3</string>
+            </list>
+            <list>
+              <string>A5</string>
+              <string>B5</string>
               <string>C5</string>
             </list>
             <list>
-              <string>E1</string>
-              <string>E2</string>
-            </list>
-            <list>
+              <string>A1</string>
+              <string>A2</string>
               <string>A3</string>
-              <string>A4</string>
-              <string>A5</string>
-            </list>
-            <list>
-              <string>D2</string>
-              <string>D3</string>
-              <string>D4</string>
             </list>
           </formacaoDesafiado>
           <plays>
-            <string>Player: player1 | Move: [B1] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [D1] | Hit: sim</string>
-            <string>Player: player1 | Move: [C1] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [C5] | Hit: não</string>
-            <string>Player: player1 | Move: [C3] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [E5] | Hit: sim</string>
-            <string>Player: player1 | Move: [D3] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [A3] | Hit: não</string>
-            <string>Player: player1 | Move: [E3] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [B2] | Hit: sim</string>
-            <string>Player: player1 | Move: [D2] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [D4] | Hit: não</string>
-            <string>Player: player1 | Move: [D4] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [B5] | Hit: sim</string>
-            <string>Player: player1 | Move: [A4] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [A5] | Hit: sim</string>
-            <string>Player: player1 | Move: [A5] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [A1] | Hit: não</string>
-            <string>Player: player1 | Move: [A3] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [C2] | Hit: não</string>
-            <string>Player: player1 | Move: [E5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [E4] | Hit: sim</string>
-            <string>Player: player1 | Move: [E1] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [A4] | Hit: não</string>
-            <string>Player: player1 | Move: [E2] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [B3] | Hit: sim</string>
-            <string>Player: player1 | Move: [A1] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [D2] | Hit: sim</string>
-            <string>Player: player1 | Move: [B2] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [C3] | Hit: não</string>
-            <string>Player: player1 | Move: [C5] | Hit: sim</string>
-            <string>Player: COMPUTADOR | Move: [A2] | Hit: não</string>
-            <string>Player: player1 | Move: [B5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [E3] | Hit: sim</string>
-            <string>Player: player1 | Move: [D5] | Hit: não</string>
-            <string>Player: COMPUTADOR | Move: [D3] | Hit: não</string>
-            <string>Player: player1 | Move: [C4] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [B2] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [C2] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [D3] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [D2] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [C1] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [C3] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [E2] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [C5] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [A4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [A5] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [A3] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [B5] | Hit: sim</string>
+            <string>Player: igor.pimentel | Move: [B3] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [D4] | Hit: não</string>
+            <string>Player: igor.pimentel | Move: [E3] | Hit: sim</string>
           </plays>
         </model.Historico>
-      </historicos>
-    </model.Player>
-    <model.Player>
-      <nickname>player2</nickname>
-      <email>igorpimentel46@gmail.com</email>
-      <password>12345678</password>
-      <pontuacao>4</pontuacao>
-      <formacao>
-        <list>
-          <string>B2</string>
-          <string>B3</string>
-        </list>
-        <list>
-          <string>E3</string>
-          <string>E4</string>
-        </list>
-        <list>
-          <string>A5</string>
-          <string>B5</string>
-          <string>C5</string>
-        </list>
-        <list>
-          <string>E1</string>
-          <string>D1</string>
-          <string>C1</string>
-        </list>
-      </formacao>
-      <historicos>
-        <model.Historico reference="../../../model.Player/historicos/model.Historico[8]"/>
-        <model.Historico reference="../../../model.Player/historicos/model.Historico[17]"/>
-        <model.Historico reference="../../../model.Player/historicos/model.Historico[17]"/>
-        <model.Historico reference="../../../model.Player/historicos/model.Historico[17]"/>
-        <model.Historico reference="../../../model.Player/historicos/model.Historico[17]"/>
-        <model.Historico reference="../../../model.Player/historicos/model.Historico[17]"/>
-        <model.Historico reference="../../../model.Player/historicos/model.Historico[23]"/>
-        <model.Historico reference="../../../model.Player/historicos/model.Historico[23]"/>
-        <model.Historico reference="../../../model.Player/historicos/model.Historico[23]"/>
-        <model.Historico reference="../../../model.Player/historicos/model.Historico[23]"/>
-        <model.Historico reference="../../../model.Player/historicos/model.Historico[23]"/>
-        <model.Historico reference="../../../model.Player/historicos/model.Historico[29]"/>
-        <model.Historico reference="../../../model.Player/historicos/model.Historico[29]"/>
-        <model.Historico reference="../../../model.Player/historicos/model.Historico[29]"/>
-        <model.Historico reference="../../../model.Player/historicos/model.Historico[29]"/>
-        <model.Historico reference="../../../model.Player/historicos/model.Historico[29]"/>
-        <model.Historico reference="../../../model.Player/historicos/model.Historico[35]"/>
       </historicos>
     </model.Player>
   </usuariosCadastrados>
