@@ -30,4 +30,4 @@ do jogo.
 
 ## Resultado
 
-![alt text] (https://github.com/IgorPimentelG/Batalha-Naval/blob/master/docs/images/Login.png)
+![alt text](https://github.com/IgorPimentelG/Batalha-Naval/blob/master/docs/images/Login.png?raw=true)
