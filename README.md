@@ -31,3 +31,8 @@ do jogo.
 ## Resultado
 
 ![alt text](https://github.com/IgorPimentelG/Batalha-Naval/blob/master/docs/images/Login.png?raw=true)
+![alt text](https://github.com/IgorPimentelG/Batalha-Naval/blob/master/docs/images/Novo%20Jogador.png?raw=true)
+![alt text](https://github.com/IgorPimentelG/Batalha-Naval/blob/master/docs/images/Editar%20Forma%C3%A7%C3%A3o.png?raw=true)
+![alt text](https://github.com/IgorPimentelG/Batalha-Naval/blob/master/docs/images/Menu.png?raw=true)
+![alt text](https://github.com/IgorPimentelG/Batalha-Naval/blob/master/docs/images/Ranking%20e%20Buscar%20Jogador.png?raw=true)
+![alt text](https://github.com/IgorPimentelG/Batalha-Naval/blob/master/docs/images/Historico.png?raw=true)
